@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Panadería Las Torres</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- SVG icon symbols (no external assets, original look) -->
+    <svg aria-hidden="true" style="display:none">
+        <symbol id="wheat" viewBox="0 0 24 24"><path d="M3 21s8-3 18-13c0 0-6 1-9 4 0 0 3-4 3-8 0 0-4 4-8 7 0 0 2-3 2-6 0 0-4 3-8 7z" /></symbol>
+        <symbol id="bread" viewBox="0 0 24 24"><path d="M2 12c0-3.9 3.1-7 7-7h6c3.9 0 7 3.1 7 7v4H2v-4z"/><path d="M6 11c1.3-1 2.9-1.6 4.6-1.6S14.3 10 15.6 11"/></symbol>
+        <symbol id="baguette" viewBox="0 0 24 24"><path d="M3 21l18-10 0.5 0.9L3.5 21.9z"/><path d="M7 15l9-5" /></symbol>
+        <symbol id="croissant" viewBox="0 0 24 24"><path d="M20 8a8 8 0 0 0-12 10 10 10 0 0 1 12-10z" /></symbol>
+        <symbol id="cake" viewBox="0 0 24 24"><path d="M4 11h16v8H4z"/><path d="M8 7c0-1.1.9-2 2-2s2 .9 2 2M12 5c0-1.1.9-2 2-2s2 .9 2 2" /></symbol>
+        <symbol id="cookie" viewBox="0 0 24 24"><path d="M21 12.3A9 9 0 1 1 11.7 3 5 5 0 0 0 21 12.3z"/><circle cx="12" cy="12" r="1"/><circle cx="8" cy="9" r="1"/><circle cx="15" cy="14" r="1"/></symbol>
+
+        <symbol id="book" viewBox="0 0 24 24"><path d="M3 5h14v14H3z"/><path d="M17 5h3v14h-3z"/></symbol>
+        <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5c0 4.4 5 11 5 11s5-6.6 5-11a5 5 0 0 0-5-5z"/><circle cx="12" cy="7" r="2"/></symbol>
+        <symbol id="handshake" viewBox="0 0 24 24"><path d="M2 12l5 5 5-3 5 3 5-5"/></symbol>
+        <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="3"/></symbol>
+    </svg>
+
     <header>
-        <h1>🥖 Panadería Las Torres</h1>
+        <h1>Panadería Las Torres</h1>
         <nav>
             <ul>
                 <li><a href="#productos" role="tab" aria-controls="productos">Productos</a></li>
@@ -25,14 +38,32 @@
         <section id="productos" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-productos">
             <div class="section-header">
                 <h2>Nuestros Productos</h2>
-                <div class="decorative-icon">🍞</div>
+                <div class="decorative-icon" aria-hidden="true">
+                    <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
+                </div>
             </div>
-            <ul>
-                <li><span class="product-icon">🍞</span>Pan de molde</li>
-                <li><span class="product-icon">🥖</span>Baguettes</li>
-                <li><span class="product-icon">🥐</span>Croissants</li>
-                <li><span class="product-icon">🎂</span>Pasteles y tartas</li>
-                <li><span class="product-icon">🍪</span>Galletas artesanales</li>
+
+            <ul class="products-list">
+                <li>
+                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#bread"></use></svg>
+                    <div class="product-info"><strong>Pan de molde</strong><small>suave y esponjoso</small></div>
+                </li>
+                <li>
+                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#baguette"></use></svg>
+                    <div class="product-info"><strong>Baguettes</strong><small>corteza crujiente</small></div>
+                </li>
+                <li>
+                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#croissant"></use></svg>
+                    <div class="product-info"><strong>Croissants</strong><small>hojaldre artesano</small></div>
+                </li>
+                <li>
+                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#cake"></use></svg>
+                    <div class="product-info"><strong>Pasteles y tartas</strong><small>por encargo</small></div>
+                </li>
+                <li>
+                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#cookie"></use></svg>
+                    <div class="product-info"><strong>Galletas artesanales</strong><small>recetas propias</small></div>
+                </li>
             </ul>
         </section>
 
@@ -40,31 +71,41 @@
         <section id="nosotros" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-nosotros">
             <div class="section-header">
                 <h2>Sobre Nosotros</h2>
-                <div class="decorative-icon">❤️</div>
+                <div class="decorative-icon" aria-hidden="true">
+                    <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
+                </div>
             </div>
-            
+
             <article class="nosotros-card">
-                <div class="card-icon">📖</div>
-                <h3>Nuestra Historia</h3>
-                <p>En Panadería Las Torres, llevamos años siendo un punto de encuentro para vecinos y visitantes de Las Lagunas de Mijas. Nuestro obrador abre cada mañana antes del amanecer, cuando el barrio aún está en silencio y el aroma del pan recién hecho empieza a llenar la calle. Es en ese momento cuando comienza nuestro día: amasando a mano, horneando con mimo y preparando los productos que nos han convertido en una parada habitual para quienes buscan calidad y cercanía.</p>
+                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#book"></use></svg></div>
+                <div class="card-content">
+                    <h3>Nuestra Historia</h3>
+                    <p>Desde hace décadas somos una panadería de barrio: obrador temprano, recetas transmitidas y paciencia en cada fermentación. El proceso lo hacemos visible en un mostrador que siempre huele a horno.</p>
+                </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon">📍</div>
-                <h3>Nuestro Lugar</h3>
-                <p>Nos encontramos en la Calle Velázquez, un pequeño rincón del barrio donde muchos ya nos conocen por nuestras hogazas crujientes, nuestros dulces artesanos y ese trato familiar que solo una panadería de toda la vida puede ofrecer. Aquí, cada barra, cada napolitana y cada pastel nace de ingredientes cuidadosamente seleccionados y de un equipo que ama lo que hace.</p>
+                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#pin"></use></svg></div>
+                <div class="card-content">
+                    <h3>Nuestro Lugar</h3>
+                    <p>Ubicados en la calle principal del barrio, la panadería es un punto de paso: vecinos, paseantes y familias encuentran aquí panes y dulces hechos con ingredientes seleccionados.</p>
+                </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon">🤝</div>
-                <h3>Compartimos Momentos</h3>
-                <p>En Las Torres no solo vendemos pan: compartimos momentos. Desde el vecino que pasa cada mañana a por su desayuno, hasta quienes vienen desde otras zonas solo para llevarse "el pan de aquí" porque les recuerda al de su infancia. También nos visitan familias que aprovechan el paseo para elegir sus dulces favoritos, o trabajadores que encuentran en nuestra panadería un respiro para seguir el día con energía.</p>
+                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#handshake"></use></svg></div>
+                <div class="card-content">
+                    <h3>Compartimos Momentos</h3>
+                    <p>La relación con quienes vienen es parte del oficio: un saludo, una recomendación, saber cuál es el pan favorito de cada uno. Esa atención marca la diferencia.</p>
+                </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon">🎯</div>
-                <h3>Nuestra Misión</h3>
-                <p>Creemos en la panadería tradicional, en la calidad auténtica y en el trato cercano. Por eso mantenemos un horario amplio para estar disponibles casi todo el día, acompañando a quienes empiezan temprano y a quienes vuelven tarde del trabajo. Nuestra misión es sencilla pero importante: que siempre encuentres algo recién hecho, sabroso y preparado con cariño.</p>
+                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#target"></use></svg></div>
+                <div class="card-content">
+                    <h3>Nuestra Misión</h3>
+                    <p>Ofrecer piezas consistentes y sabrosas, cuidando técnica y materia prima para que cada producto llegue recién hecho y con carácter.</p>
+                </div>
             </article>
         </section>
 
@@ -72,21 +113,24 @@
         <section id="contacto" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-contacto">
             <div class="section-header">
                 <h2>Contacto</h2>
-                <div class="decorative-icon">📞</div>
+                <div class="decorative-icon" aria-hidden="true">
+                    <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
+                </div>
             </div>
+
             <div class="contact-grid">
                 <div class="contact-card">
-                    <div class="contact-icon">📍</div>
+                    <svg class="contact-icon" viewBox="0 0 24 24"><use href="#pin"></use></svg>
                     <h3>Dirección</h3>
                     <p>Calle Velázquez 123<br>Las Lagunas de Mijas<br>Málaga, España</p>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">📞</div>
+                    <svg class="contact-icon" viewBox="0 0 24 24"><use href="#handshake"></use></svg>
                     <h3>Teléfono</h3>
                     <p><a href="tel:+34952123456">+34 952 123 456</a></p>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">✉️</div>
+                    <svg class="contact-icon" viewBox="0 0 24 24"><use href="#book"></use></svg>
                     <h3>Email</h3>
                     <p><a href="mailto:info@panaderialaslastorres.es">info@panaderialaslastorres.es</a></p>
                 </div>
@@ -95,8 +139,8 @@
     </main>
 
     <footer>
-        <div class="footer-decoration">🥖</div>
-        <small>© 2025 Panadería Las Torres — Hecho con ❤️ y masa fresca</small>
+        <div class="footer-decoration" aria-hidden="true"><svg class="icon" width="32" height="32"><use href="#wheat"></use></svg></div>
+        <small>© 2025 Panadería Las Torres — Hecho con oficio y masa fresca</small>
     </footer>
 
     <script>
@@ -126,273 +170,48 @@
     </script>
 
     <style>
-        /* Section Headers con decoración */
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 28px;
-            position: relative;
-        }
+        /* Replace emoji styles with refined SVG styling, cleaner & original */
+        .decorative-icon .icon,
+        .footer-decoration .icon { fill: none; stroke: rgba(201,79,44,0.95); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.95; }
+        .product-icon, .card-icon svg, .contact-icon { width: 44px; height: 44px; display:block; }
+        .product-icon use, .card-icon use, .contact-icon use { stroke: rgba(59,47,42,0.95); stroke-width: 1.4; fill: transparent; }
 
-        .section-header h2 {
-            flex: 1;
-            margin: 0;
-        }
+        /* Layout tweaks for product list */
+        .products-list { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px; list-style:none; padding:0; margin:0; }
+        .products-list li { display:flex; gap:14px; align-items:center; padding:18px; background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,245,0.9)); border-radius:12px; border:1px solid rgba(40,32,28,0.04); box-shadow:0 8px 26px rgba(46,38,33,0.06); }
+        .product-info strong{ display:block; font-weight:700; color: #2f231f; }
+        .product-info small{ color: #7a675f; font-size:13px; }
 
-        .decorative-icon {
-            font-size: 48px;
-            animation: floatDecor 3s ease-in-out infinite;
-            filter: drop-shadow(0 8px 20px rgba(201, 79, 44, 0.15));
-        }
+        /* Nosotros cards: more crafted, no icons as emojis */
+        .nosotros-card { display:flex; gap:18px; align-items:flex-start; padding:24px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,248,244,0.9)); border:1px solid rgba(34,24,20,0.04); box-shadow:0 14px 40px rgba(41,33,29,0.06); margin-bottom:22px; }
+        .card-icon { flex:0 0 64px; display:flex; align-items:center; justify-content:center; border-radius:10px; background:linear-gradient(135deg, rgba(201,79,44,0.12), rgba(255,180,100,0.06)); }
+        .card-content h3{ margin:0 0 8px 0; font-family:'Playfair Display', serif; color:#b2492a; font-size:18px; }
+        .card-content p{ margin:0; color:#6f5e55; line-height:1.65; }
 
-        @keyframes floatDecor {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(4deg); }
-        }
+        /* Contact cards refined */
+        .contact-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+        .contact-card { padding:18px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,246,0.92)); border:1px solid rgba(34,24,20,0.04); text-align:center; box-shadow:0 10px 30px rgba(40,32,28,0.05); }
+        .contact-card h3{ margin:10px 0 6px 0; color:#2f231f; font-family:'Playfair Display', serif; }
+        .contact-card a{ color:#b2492a; font-weight:600; text-decoration:none; }
+        .contact-card a:hover{ text-decoration:underline; color:#c86a3f; }
 
-        /* Productos con iconos */
-        #productos ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 18px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        /* Section header adjustments */
+        .section-header { align-items:center; gap:12px; margin-bottom:22px; }
+        .section-header h2 { margin:0; font-size:22px; color:#2f231f; font-family:'Playfair Display', serif; }
+        .decorative-icon { width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
 
-        #productos li {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 245, 0.85));
-            border-radius: 14px;
-            padding: 22px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            box-shadow: 0 12px 35px rgba(59, 47, 42, 0.1);
-            transition: all 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 182, 120, 0.15);
-        }
+        /* Footer */
+        footer { padding:28px 0 40px; color:#6f5e55; text-align:center; }
+        .footer-decoration .icon { stroke-width:1.2; }
 
-        #productos li::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 182, 120, 0.08), transparent);
-            opacity: 0;
-            transition: opacity 0.32s;
-        }
-
-        #productos li:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(201, 79, 44, 0.18);
-            border-color: rgba(255, 182, 120, 0.3);
-        }
-
-        #productos li:hover::before {
-            opacity: 1;
-        }
-
-        .product-icon {
-            font-size: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        #productos li:nth-child(1) .product-icon { animation-delay: 0s; }
-        #productos li:nth-child(2) .product-icon { animation-delay: 0.1s; }
-        #productos li:nth-child(3) .product-icon { animation-delay: 0.2s; }
-        #productos li:nth-child(4) .product-icon { animation-delay: 0.3s; }
-        #productos li:nth-child(5) .product-icon { animation-delay: 0.4s; }
-
-        /* Cards de Nosotros mejoradas */
-        .nosotros-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 250, 245, 0.7));
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 28px;
-            box-shadow: 0 12px 40px rgba(59, 47, 42, 0.12);
-            transition: all 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 182, 120, 0.2);
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .nosotros-card::before {
-            content: "";
-            position: absolute;
-            top: -150px;
-            right: -100px;
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 182, 120, 0.15), transparent 40%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .card-icon {
-            font-size: 40px;
-            flex: 0 0 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(201, 79, 44, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-
-        .nosotros-card:hover {
-            transform: translateY(-14px);
-            box-shadow: 0 28px 60px rgba(59, 47, 42, 0.18);
-            border-color: rgba(255, 182, 120, 0.4);
-        }
-
-        .nosotros-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: var(--accent);
-            margin: 0 0 10px 0;
-            letter-spacing: 0.3px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .nosotros-card p {
-            color: var(--muted);
-            font-size: 15px;
-            line-height: 1.7;
-            position: relative;
-            z-index: 2;
-            margin: 0;
-        }
-
-        /* Contacto grid mejorado */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-            margin-top: 24px;
-        }
-
-        .contact-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 250, 245, 0.75));
-            border-radius: 14px;
-            padding: 24px;
-            text-align: center;
-            box-shadow: 0 12px 40px rgba(59, 47, 42, 0.11);
-            transition: all 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
-            border: 1px solid rgba(255, 182, 120, 0.15);
-            position: relative;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 24px 55px rgba(201, 79, 44, 0.16);
-            border-color: rgba(255, 182, 120, 0.35);
-        }
-
-        .contact-icon {
-            font-size: 44px;
-            margin-bottom: 12px;
-            display: inline-block;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .contact-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            color: var(--text);
-            margin: 12px 0 8px 0;
-        }
-
-        .contact-card p {
-            color: var(--muted);
-            font-size: 14px;
-            margin: 0;
-        }
-
-        .contact-card a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .contact-card a:hover {
-            color: var(--accent-2);
-            text-decoration: underline;
-        }
-
-        /* Footer decorado */
-        footer {
-            margin-top: 48px;
-            text-align: center;
-            color: var(--muted);
-            position: relative;
-            padding: 24px 0;
-        }
-
-        .footer-decoration {
-            font-size: 32px;
-            margin-bottom: 12px;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+        /* Minor interactions */
+        .products-list li:hover, .nosotros-card:hover, .contact-card:hover { transform:translateY(-6px); transition:transform .22s ease, box-shadow .22s ease; box-shadow:0 20px 50px rgba(40,32,28,0.08); }
 
         /* Responsive */
-        @media (max-width: 720px) {
-            .nosotros-card {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-                padding: 20px;
-            }
-
-            .card-icon {
-                flex: 0 0 50px;
-                font-size: 32px;
-            }
-
-            .section-header {
-                margin-bottom: 20px;
-            }
-
-            .decorative-icon {
-                font-size: 36px;
-            }
-
-            #productos ul {
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                gap: 14px;
-            }
+        @media (max-width:720px){
+            .nosotros-card { flex-direction:column; text-align:left; align-items:flex-start; }
+            .card-icon { width:52px; height:52px; }
+            .product-icon, .card-icon svg, .contact-icon { width:40px; height:40px; }
         }
     </style>
 </body>
