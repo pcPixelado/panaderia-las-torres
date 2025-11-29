@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1>Panadería Las Torres</h1>
+        <h1>🥖 Panadería Las Torres</h1>
         <nav>
             <ul>
                 <li><a href="#productos" role="tab" aria-controls="productos">Productos</a></li>
@@ -21,43 +21,85 @@
     </header>
 
     <main class="tab-panels">
-        <!-- Cada sección es ahora un panel de pestaña -->
+        <!-- PRODUCTOS -->
         <section id="productos" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-productos">
-            <h2>Nuestros Productos</h2>
+            <div class="section-header">
+                <h2>Nuestros Productos</h2>
+                <div class="decorative-icon">🍞</div>
+            </div>
             <ul>
-                <li>Pan de molde</li>
-                <li>Baguettes</li>
-                <li>Croissants</li>
-                <li>Pasteles y tartas</li>
-                <li>Galletas artesanales</li>
+                <li><span class="product-icon">🍞</span>Pan de molde</li>
+                <li><span class="product-icon">🥖</span>Baguettes</li>
+                <li><span class="product-icon">🥐</span>Croissants</li>
+                <li><span class="product-icon">🎂</span>Pasteles y tartas</li>
+                <li><span class="product-icon">🍪</span>Galletas artesanales</li>
             </ul>
         </section>
 
+        <!-- NOSOTROS -->
         <section id="nosotros" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>En Panadería Las Torres, llevamos años siendo un punto de encuentro para vecinos y visitantes de Las Lagunas de Mijas. Nuestro obrador abre cada mañana antes del amanecer, cuando el barrio aún está en silencio y el aroma del pan recién hecho empieza a llenar la calle. Es en ese momento cuando comienza nuestro día: amasando a mano, horneando con mimo y preparando los productos que nos han convertido en una parada habitual para quienes buscan calidad y cercanía.
+            <div class="section-header">
+                <h2>Sobre Nosotros</h2>
+                <div class="decorative-icon">❤️</div>
+            </div>
+            
+            <article class="nosotros-card">
+                <div class="card-icon">📖</div>
+                <h3>Nuestra Historia</h3>
+                <p>En Panadería Las Torres, llevamos años siendo un punto de encuentro para vecinos y visitantes de Las Lagunas de Mijas. Nuestro obrador abre cada mañana antes del amanecer, cuando el barrio aún está en silencio y el aroma del pan recién hecho empieza a llenar la calle. Es en ese momento cuando comienza nuestro día: amasando a mano, horneando con mimo y preparando los productos que nos han convertido en una parada habitual para quienes buscan calidad y cercanía.</p>
+            </article>
 
-Nos encontramos en la Calle Velázquez, un pequeño rincón del barrio donde muchos ya nos conocen por nuestras hogazas crujientes, nuestros dulces artesanos y ese trato familiar que solo una panadería de toda la vida puede ofrecer. Aquí, cada barra, cada napolitana y cada pastel nace de ingredientes cuidadosamente seleccionados y de un equipo que ama lo que hace.
+            <article class="nosotros-card">
+                <div class="card-icon">📍</div>
+                <h3>Nuestro Lugar</h3>
+                <p>Nos encontramos en la Calle Velázquez, un pequeño rincón del barrio donde muchos ya nos conocen por nuestras hogazas crujientes, nuestros dulces artesanos y ese trato familiar que solo una panadería de toda la vida puede ofrecer. Aquí, cada barra, cada napolitana y cada pastel nace de ingredientes cuidadosamente seleccionados y de un equipo que ama lo que hace.</p>
+            </article>
 
-En Las Torres no solo vendemos pan: compartimos momentos. Desde el vecino que pasa cada mañana a por su desayuno, hasta quienes vienen desde otras zonas solo para llevarse “el pan de aquí” porque les recuerda al de su infancia. También nos visitan familias que aprovechan el paseo para elegir sus dulces favoritos, o trabajadores que encuentran en nuestra panadería un respiro para seguir el día con energía.
+            <article class="nosotros-card">
+                <div class="card-icon">🤝</div>
+                <h3>Compartimos Momentos</h3>
+                <p>En Las Torres no solo vendemos pan: compartimos momentos. Desde el vecino que pasa cada mañana a por su desayuno, hasta quienes vienen desde otras zonas solo para llevarse "el pan de aquí" porque les recuerda al de su infancia. También nos visitan familias que aprovechan el paseo para elegir sus dulces favoritos, o trabajadores que encuentran en nuestra panadería un respiro para seguir el día con energía.</p>
+            </article>
 
-Creemos en la panadería tradicional, en la calidad auténtica y en el trato cercano. Por eso mantenemos un horario amplio para estar disponibles casi todo el día, acompañando a quienes empiezan temprano y a quienes vuelven tarde del trabajo. Nuestra misión es sencilla pero importante: que siempre encuentres algo recién hecho, sabroso y preparado con cariño.</p>
+            <article class="nosotros-card">
+                <div class="card-icon">🎯</div>
+                <h3>Nuestra Misión</h3>
+                <p>Creemos en la panadería tradicional, en la calidad auténtica y en el trato cercano. Por eso mantenemos un horario amplio para estar disponibles casi todo el día, acompañando a quienes empiezan temprano y a quienes vuelven tarde del trabajo. Nuestra misión es sencilla pero importante: que siempre encuentres algo recién hecho, sabroso y preparado con cariño.</p>
+            </article>
         </section>
 
+        <!-- CONTACTO -->
         <section id="contacto" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-contacto">
-            <h2>Contacto</h2>
-            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
-            <p>Teléfono: +123 456 7890</p>
-            <p>Email: info@panaderiadelicias.example</p>
+            <div class="section-header">
+                <h2>Contacto</h2>
+                <div class="decorative-icon">📞</div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Dirección</h3>
+                    <p>Calle Velázquez 123<br>Las Lagunas de Mijas<br>Málaga, España</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+34952123456">+34 952 123 456</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@panaderialaslastorres.es">info@panaderialaslastorres.es</a></p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <small>© Panadería La Delicias</small>
+        <div class="footer-decoration">🥖</div>
+        <small>© 2025 Panadería Las Torres — Hecho con ❤️ y masa fresca</small>
     </footer>
 
     <script>
-    // script mínimo para controlar pestañas y hash en la URL
     document.addEventListener('DOMContentLoaded', function () {
         const links = document.querySelectorAll('nav a');
         const panels = document.querySelectorAll('.tab-panel');
@@ -82,5 +124,276 @@ Creemos en la panadería tradicional, en la calidad auténtica y en el trato cer
         if (initial) activate(initial, false);
     });
     </script>
+
+    <style>
+        /* Section Headers con decoración */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            flex: 1;
+            margin: 0;
+        }
+
+        .decorative-icon {
+            font-size: 48px;
+            animation: floatDecor 3s ease-in-out infinite;
+            filter: drop-shadow(0 8px 20px rgba(201, 79, 44, 0.15));
+        }
+
+        @keyframes floatDecor {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+
+        /* Productos con iconos */
+        #productos ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #productos li {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 245, 0.85));
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 12px 35px rgba(59, 47, 42, 0.1);
+            transition: all 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 182, 120, 0.15);
+        }
+
+        #productos li::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 182, 120, 0.08), transparent);
+            opacity: 0;
+            transition: opacity 0.32s;
+        }
+
+        #productos li:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(201, 79, 44, 0.18);
+            border-color: rgba(255, 182, 120, 0.3);
+        }
+
+        #productos li:hover::before {
+            opacity: 1;
+        }
+
+        .product-icon {
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        #productos li:nth-child(1) .product-icon { animation-delay: 0s; }
+        #productos li:nth-child(2) .product-icon { animation-delay: 0.1s; }
+        #productos li:nth-child(3) .product-icon { animation-delay: 0.2s; }
+        #productos li:nth-child(4) .product-icon { animation-delay: 0.3s; }
+        #productos li:nth-child(5) .product-icon { animation-delay: 0.4s; }
+
+        /* Cards de Nosotros mejoradas */
+        .nosotros-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 250, 245, 0.7));
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 12px 40px rgba(59, 47, 42, 0.12);
+            transition: all 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 182, 120, 0.2);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .nosotros-card::before {
+            content: "";
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 182, 120, 0.15), transparent 40%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .card-icon {
+            font-size: 40px;
+            flex: 0 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(201, 79, 44, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .nosotros-card:hover {
+            transform: translateY(-14px);
+            box-shadow: 0 28px 60px rgba(59, 47, 42, 0.18);
+            border-color: rgba(255, 182, 120, 0.4);
+        }
+
+        .nosotros-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--accent);
+            margin: 0 0 10px 0;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nosotros-card p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+
+        /* Contacto grid mejorado */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 24px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 250, 245, 0.75));
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(59, 47, 42, 0.11);
+            transition: all 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+            border: 1px solid rgba(255, 182, 120, 0.15);
+            position: relative;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 24px 55px rgba(201, 79, 44, 0.16);
+            border-color: rgba(255, 182, 120, 0.35);
+        }
+
+        .contact-icon {
+            font-size: 44px;
+            margin-bottom: 12px;
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--text);
+            margin: 12px 0 8px 0;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent-2);
+            text-decoration: underline;
+        }
+
+        /* Footer decorado */
+        footer {
+            margin-top: 48px;
+            text-align: center;
+            color: var(--muted);
+            position: relative;
+            padding: 24px 0;
+        }
+
+        .footer-decoration {
+            font-size: 32px;
+            margin-bottom: 12px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 720px) {
+            .nosotros-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .card-icon {
+                flex: 0 0 50px;
+                font-size: 32px;
+            }
+
+            .section-header {
+                margin-bottom: 20px;
+            }
+
+            .decorative-icon {
+                font-size: 36px;
+            }
+
+            #productos ul {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 14px;
+            }
+        }
+    </style>
 </body>
 </html>
