@@ -4,44 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Panadería La jugosa</title>
-
+    <title>Panadería Las Torres</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
-  <body>
+<body>
     <header>
         <h1>Panadería La Delicias</h1>
         <nav>
             <ul>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#productos" role="tab" aria-controls="productos">Productos</a></li>
+                <li><a href="#nosotros" role="tab" aria-controls="nosotros">Nosotros</a></li>
+                <li><a href="#contacto" role="tab" aria-controls="contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
-        <ul>
-            <li>Pan de molde</li>
-            <li>Baguettes</li>
-            <li>Croissants</li>
-            <li>Pasteles y tartas</li>
-            <li>Galletas artesanales</li>
-        </ul>
-    </section>
+    <main class="tab-panels">
+        <!-- Cada sección es ahora un panel de pestaña -->
+        <section id="productos" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-productos">
+            <h2>Nuestros Productos</h2>
+            <ul>
+                <li>Pan de molde</li>
+                <li>Baguettes</li>
+                <li>Croissants</li>
+                <li>Pasteles y tartas</li>
+                <li>Galletas artesanales</li>
+            </ul>
+        </section>
 
-    <section id="nosotros">
-        <h2>Sobre Nosotros</h2>
-        <p>En Panadería La Delicia, nos dedicamos a ofrecer productos frescos y de alta calidad. Nuestra pasión por la panadería se refleja en cada uno de nuestros productos, elaborados con ingredientes seleccionados y mucho amor.</p>
-    </section>
+        <section id="nosotros" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>En Panadería La Delicia, nos dedicamos a ofrecer productos frescos y de alta calidad. Nuestra pasión por la panadería se refleja en cada uno de nuestros productos, elaborados con ingredientes seleccionados y mucho amor.</p>
+        </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
-        <p>Teléfono: +123 456 7890</p>
-        <p>Email:
-            
-        </body>
+        <section id="contacto" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-contacto">
+            <h2>Contacto</h2>
+            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+            <p>Teléfono: +123 456 7890</p>
+            <p>Email: info@panaderiadelicias.example</p>
+        </section>
+    </main>
+
+    <footer>
+        <small>© Panadería La Delicias</small>
+    </footer>
+
+    <script>
+    // script mínimo para controlar pestañas y hash en la URL
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('nav a');
+        const panels = document.querySelectorAll('.tab-panel');
+
+        function activate(id, updateHistory = true) {
+            panels.forEach(p => p.classList.toggle('active', p.id === id));
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+            if (updateHistory) history.replaceState(null, '', '#' + id);
+            const panel = document.getElementById(id);
+            if (panel) panel.focus();
+        }
+
+        links.forEach(a => {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                const id = this.getAttribute('href').slice(1);
+                activate(id);
+            });
+        });
+
+        const initial = (location.hash && location.hash.slice(1)) || (panels[0] && panels[0].id);
+        if (initial) activate(initial, false);
+    });
+    </script>
+</body>
 </html>

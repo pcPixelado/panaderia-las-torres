@@ -203,13 +203,26 @@ header, section{
     animation: floatUp .45s ease both;
 }
 
-/* Responsive tweaks */
+/* Pestañas: mostrar solo el panel activo */
+.tab-panel{ display:none; opacity:0; transform:translateY(6px); transition:opacity .28s ease, transform .28s ease; outline:none; }
+.tab-panel.active{ display:block; opacity:1; transform:translateY(0); }
+
+/* Estilo de la pestaña activa en la navegación */
+nav a.active{
+    color: #fff;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    box-shadow: 0 10px 26px rgba(201,79,44,0.14);
+    transform:translateY(-2px);
+}
+
+/* Ajustes para móviles: ocupar más espacio vertical */
 @media (max-width:720px){
     body{padding:18px}
     header{flex-direction:column;align-items:flex-start}
     nav ul{flex-wrap:wrap}
     h1{font-size:28px}
     #productos ul{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+    .tab-panel{ padding:14px 0; }
 }
 
 /* Micro-interactions */
