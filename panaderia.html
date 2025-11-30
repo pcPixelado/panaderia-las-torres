@@ -20,15 +20,22 @@
         <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5c0 4.4 5 11 5 11s5-6.6 5-11a5 5 0 0 0-5-5z"/><circle cx="12" cy="7" r="2"/></symbol>
         <symbol id="handshake" viewBox="0 0 24 24"><path d="M2 12l5 5 5-3 5 3 5-5"/></symbol>
         <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="3"/></symbol>
+        
+        <!-- Nuevos símbolos para más vida -->
+        <symbol id="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+        <symbol id="heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+        <symbol id="flame" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0z"/></symbol>
+        <symbol id="sparkles" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L2 9h7l3-7z"/></symbol>
+        <symbol id="smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1 2 4 2 4-2 4-2M9 9h1M14 9h1"/></symbol>
     </svg>
 
     <header>
-        <h1>Panadería Las Torres</h1>
+        <h1>🥖 Panadería Las Torres 🥐</h1>
         <nav>
             <ul>
-                <li><a href="#productos" role="tab" aria-controls="productos">Productos</a></li>
-                <li><a href="#nosotros" role="tab" aria-controls="nosotros">Nosotros</a></li>
-                <li><a href="#contacto" role="tab" aria-controls="contacto">Contacto</a></li>
+                <li><a href="#productos" role="tab" aria-controls="productos">🍞 Productos</a></li>
+                <li><a href="#nosotros" role="tab" aria-controls="nosotros">💫 Nosotros</a></li>
+                <li><a href="#contacto" role="tab" aria-controls="contacto">📍 Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -37,7 +44,7 @@
         <!-- PRODUCTOS -->
         <section id="productos" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-productos">
             <div class="section-header">
-                <h2>Nuestros Productos</h2>
+                <h2>✨ Nuestros Productos ✨</h2>
                 <div class="decorative-icon" aria-hidden="true">
                     <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
                 </div>
@@ -46,23 +53,27 @@
             <ul class="products-list">
                 <li>
                     <svg class="product-icon" viewBox="0 0 24 24"><use href="#bread"></use></svg>
-                    <div class="product-info"><strong>Pan de molde</strong><small>suave y esponjoso</small></div>
+                    <div class="product-info"><strong>🌾 Pan de molde</strong><small>suave y esponjoso</small></div>
                 </li>
                 <li>
                     <svg class="product-icon" viewBox="0 0 24 24"><use href="#baguette"></use></svg>
-                    <div class="product-info"><strong>Baguettes</strong><small>corteza crujiente</small></div>
+                    <div class="product-info"><strong>✨ Baguettes</strong><small>corteza crujiente</small></div>
                 </li>
                 <li>
                     <svg class="product-icon" viewBox="0 0 24 24"><use href="#croissant"></use></svg>
-                    <div class="product-info"><strong>Croissants</strong><small>hojaldre artesano</small></div>
+                    <div class="product-info"><strong>🔥 Croissants</strong><small>hojaldre artesano</small></div>
                 </li>
                 <li>
                     <svg class="product-icon" viewBox="0 0 24 24"><use href="#cake"></use></svg>
-                    <div class="product-info"><strong>Pasteles y tartas</strong><small>por encargo</small></div>
+                    <div class="product-info"><strong>🎂 Pasteles y tartas</strong><small>por encargo</small></div>
                 </li>
                 <li>
                     <svg class="product-icon" viewBox="0 0 24 24"><use href="#cookie"></use></svg>
-                    <div class="product-info"><strong>Galletas artesanales</strong><small>recetas propias</small></div>
+                    <div class="product-info"><strong>💛 Galletas artesanales</strong><small>recetas propias</small></div>
+                </li>
+                <li>
+                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#heart"></use></svg>
+                    <div class="product-info"><strong>❤️ Pan especial</strong><small>hecho con amor</small></div>
                 </li>
             </ul>
         </section>
@@ -70,7 +81,7 @@
         <!-- NOSOTROS -->
         <section id="nosotros" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-nosotros">
             <div class="section-header">
-                <h2>Sobre Nosotros</h2>
+                <h2>📖 Sobre Nosotros 📖</h2>
                 <div class="decorative-icon" aria-hidden="true">
                     <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
                 </div>
@@ -79,7 +90,7 @@
             <article class="nosotros-card">
                 <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#book"></use></svg></div>
                 <div class="card-content">
-                    <h3>Nuestra Historia</h3>
+                    <h3>📚 Nuestra Historia</h3>
                     <p>Desde hace décadas somos una panadería de barrio: obrador temprano, recetas transmitidas y paciencia en cada fermentación. El proceso lo hacemos visible en un mostrador que siempre huele a horno.</p>
                 </div>
             </article>
@@ -87,7 +98,7 @@
             <article class="nosotros-card">
                 <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#pin"></use></svg></div>
                 <div class="card-content">
-                    <h3>Nuestro Lugar</h3>
+                    <h3>🏘️ Nuestro Lugar</h3>
                     <p>Ubicados en la calle principal del barrio, la panadería es un punto de paso: vecinos, paseantes y familias encuentran aquí panes y dulces hechos con ingredientes seleccionados.</p>
                 </div>
             </article>
@@ -95,15 +106,15 @@
             <article class="nosotros-card">
                 <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#handshake"></use></svg></div>
                 <div class="card-content">
-                    <h3>Compartimos Momentos</h3>
+                    <h3>🤝 Compartimos Momentos</h3>
                     <p>La relación con quienes vienen es parte del oficio: un saludo, una recomendación, saber cuál es el pan favorito de cada uno. Esa atención marca la diferencia.</p>
                 </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#target"></use></svg></div>
+                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#star"></use></svg></div>
                 <div class="card-content">
-                    <h3>Nuestra Misión</h3>
+                    <h3>⭐ Nuestra Misión</h3>
                     <p>Ofrecer piezas consistentes y sabrosas, cuidando técnica y materia prima para que cada producto llegue recién hecho y con carácter.</p>
                 </div>
             </article>
@@ -112,7 +123,7 @@
         <!-- CONTACTO -->
         <section id="contacto" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-contacto">
             <div class="section-header">
-                <h2>Contacto</h2>
+                <h2>📞 Contacto 📞</h2>
                 <div class="decorative-icon" aria-hidden="true">
                     <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
                 </div>
@@ -121,17 +132,17 @@
             <div class="contact-grid">
                 <div class="contact-card">
                     <svg class="contact-icon" viewBox="0 0 24 24"><use href="#pin"></use></svg>
-                    <h3>Dirección</h3>
+                    <h3>📍 Dirección</h3>
                     <p>Calle Velázquez 123<br>Las Lagunas de Mijas<br>Málaga, España</p>
                 </div>
                 <div class="contact-card">
                     <svg class="contact-icon" viewBox="0 0 24 24"><use href="#handshake"></use></svg>
-                    <h3>Teléfono</h3>
+                    <h3>☎️ Teléfono</h3>
                     <p><a href="tel:+34952123456">+34 952 123 456</a></p>
                 </div>
                 <div class="contact-card">
                     <svg class="contact-icon" viewBox="0 0 24 24"><use href="#book"></use></svg>
-                    <h3>Email</h3>
+                    <h3>✉️ Email</h3>
                     <p><a href="mailto:info@panaderialaslastorres.es">info@panaderialaslastorres.es</a></p>
                 </div>
             </div>
@@ -140,7 +151,7 @@
 
     <footer>
         <div class="footer-decoration" aria-hidden="true"><svg class="icon" width="32" height="32"><use href="#wheat"></use></svg></div>
-        <small>© 2025 Panadería Las Torres — Hecho con oficio y masa fresca</small>
+        <small>© 2025 Panadería Las Torres — 🍃 Hecho con oficio y masa fresca 🍃</small>
     </footer>
 
     <script>
