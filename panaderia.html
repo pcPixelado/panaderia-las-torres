@@ -3,181 +3,232 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panadería Las Torres</title>
+    <title>Panadería Las Torres — Pan Artesano Recién Horneado</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- SVG icon symbols (no external assets, original look) -->
-    <svg aria-hidden="true" style="display:none">
-        <symbol id="wheat" viewBox="0 0 24 24"><path d="M3 21s8-3 18-13c0 0-6 1-9 4 0 0 3-4 3-8 0 0-4 4-8 7 0 0 2-3 2-6 0 0-4 3-8 7z" /></symbol>
-        <symbol id="bread" viewBox="0 0 24 24"><path d="M2 12c0-3.9 3.1-7 7-7h6c3.9 0 7 3.1 7 7v4H2v-4z"/><path d="M6 11c1.3-1 2.9-1.6 4.6-1.6S14.3 10 15.6 11"/></symbol>
-        <symbol id="baguette" viewBox="0 0 24 24"><path d="M3 21l18-10 0.5 0.9L3.5 21.9z"/><path d="M7 15l9-5" /></symbol>
-        <symbol id="croissant" viewBox="0 0 24 24"><path d="M20 8a8 8 0 0 0-12 10 10 10 0 0 1 12-10z" /></symbol>
-        <symbol id="cake" viewBox="0 0 24 24"><path d="M4 11h16v8H4z"/><path d="M8 7c0-1.1.9-2 2-2s2 .9 2 2M12 5c0-1.1.9-2 2-2s2 .9 2 2" /></symbol>
-        <symbol id="cookie" viewBox="0 0 24 24"><path d="M21 12.3A9 9 0 1 1 11.7 3 5 5 0 0 0 21 12.3z"/><circle cx="12" cy="12" r="1"/><circle cx="8" cy="9" r="1"/><circle cx="15" cy="14" r="1"/></symbol>
-
-        <symbol id="book" viewBox="0 0 24 24"><path d="M3 5h14v14H3z"/><path d="M17 5h3v14h-3z"/></symbol>
-        <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5c0 4.4 5 11 5 11s5-6.6 5-11a5 5 0 0 0-5-5z"/><circle cx="12" cy="7" r="2"/></symbol>
-        <symbol id="handshake" viewBox="0 0 24 24"><path d="M2 12l5 5 5-3 5 3 5-5"/></symbol>
-        <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="3"/></symbol>
-
-        <!-- Nuevos símbolos para más vida -->
-        <symbol id="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
-        <symbol id="heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
-        <symbol id="flame" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0z"/></symbol>
-        <symbol id="sparkles" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L2 9h7l3-7z"/></symbol>
-        <symbol id="smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1 2 4 2 4-2 4-2M9 9h1M14 9h1"/></symbol>
+    <!-- SVG Icons para header y footer -->
+    <svg aria-hidden="true" style="display: none;">
+        <symbol id="wheat" viewBox="0 0 24 24">
+            <path d="M12 2v20M8 6l-2 10M8 8l-3 8M12 2l0 2M16 6l2 10M16 8l3 8"/>
+        </symbol>
+        <symbol id="phone" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </symbol>
+        <symbol id="pin" viewBox="0 0 24 24">
+            <path d="M12 2C9 2 7 4 7 7c0 5 5 13 5 13s5-8 5-13c0-3-2-5-5-5ZM12 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/>
+        </symbol>
+        <symbol id="mail" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <path d="M22 6l-10 7L2 6" fill="none"/>
+        </symbol>
+        <symbol id="book" viewBox="0 0 24 24">
+            <path d="M3 4h9v16H3zM12 4h9v16h-9M6 8h3M6 12h3M6 16h3M15 8h3M15 12h3M15 16h3"/>
+        </symbol>
+        <symbol id="bread" viewBox="0 0 24 24">
+            <path d="M3 8c0-2 1-4 4-4h10c3 0 4 2 4 4v10H3V8M5 10h14M5 13h14M5 16h14"/>
+        </symbol>
     </svg>
 
+    <!-- Header Hero -->
     <header>
-        <h1>🥖 Panadería Las Torres 🥐</h1>
-
+        <h1>Panadería Las Torres</h1>
         <nav>
             <ul>
-                <li><a href="#productos" role="tab" aria-controls="productos">🍞 Productos</a></li>
-                <li><a href="#nosotros" role="tab" aria-controls="nosotros">💫 Nosotros</a></li>
-                <li><a href="#contacto" role="tab" aria-controls="contacto">📍 Contacto</a></li>
+                <li><a href="#productos" class="nav-link active">Productos</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="tab-panels">
-        <!-- PRODUCTOS -->
-        <section id="productos" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-productos">
+        <!-- PRODUCTOS — Gorgeous Grid -->
+        <section id="productos" class="tab-panel active" role="tabpanel">
             <div class="section-header">
-                <h2>✨ Nuestros Productos ✨</h2>
-                <div class="decorative-icon" aria-hidden="true">
-                    <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
+                <h2>Nuestros Productos</h2>
+                <div class="decorative-icon">
+                    <svg><use href="#wheat"></use></svg>
                 </div>
             </div>
 
             <ul class="products-list">
                 <li>
-                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#bread"></use></svg>
-                    <div class="product-info"><strong>🌾 Pan de molde</strong><small>suave y esponjoso</small></div>
+                    <div class="product-image">
+                        <img src="https://imgs.search.brave.com/22DJOnfjEgj5uz37nqiVhFsJrxVekoWw93c4anvDUhc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9yZWJh/bmFkYS1kZS1wYW4t/YWlzbGFkYS1lbi1l/bC1mb25kby1ibGFu/Y28tdmlzaS1uLXN1/cGVyaW9yLXVuLTE0/Nzg5MjE5MC5qcGc"/>
+                    </div>
+                    <div class="product-info">
+                        <strong>Pan de molde</strong>
+                        <small>Suave, esponjoso y recién hecho cada mañana</small>
+                    </div>
                 </li>
                 <li>
-                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#baguette"></use></svg>
-                    <div class="product-info"><strong>✨ Baguettes</strong><small>corteza crujiente</small></div>
+                    <div class="product-image">
+                        <img src="https://imgs.search.brave.com/aKXypZDFQu2dQXuyeg-66DmZobeC2X2BQI37Lb8InAw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYXNp/cmVuYS52dGV4YXNz/ZXRzLmNvbS9hcnF1/aXZvcy9pZHMvMzU4/Mjc5LTgwMC04MDA_/dj02Mzg4MDIxODcw/NjA4MDAwMDAmd2lk/dGg9ODAwJmhlaWdo/dD04MDAmYXNwZWN0/PXRydWU"/>
+                    </div>
+                    <div class="product-info">
+                        <strong>Baguettes</strong>
+                        <small>Corteza crujiente, miga tierna y aroma irresistible</small>
+                    </div>
                 </li>
                 <li>
-                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#croissant"></use></svg>
-                    <div class="product-info"><strong>🔥 Croissants</strong><small>hojaldre artesano</small></div>
+                    <div class="product-image">
+                        <img src="https://imgs.search.brave.com/ZTUX1gS8Av-ue_zb58pX-mGJnhusd5GsEKJkRexbP-I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGl2aW5hY29jaW5h/LmVzL3dwLWNvbnRl/bnQvdXBsb2Fkcy9j/cm9pc3NhbnRzLWNh/c2Vyb3MtZGUtaG9q/YWxkcmUuanBn"/>
+                    </div>
+                    <div class="product-info">
+                        <strong>Croissants</strong>
+                        <small>Hojaldre artesano, mantequilla pura, hecho a mano</small>
+                    </div>
                 </li>
                 <li>
-                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#cake"></use></svg>
-                    <div class="product-info"><strong>🎂 Pasteles y tartas</strong><small>por encargo</small></div>
+                    <div class="product-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'%3E%3Cdefs%3E%3ClinearGradient id='k1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8b4a0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c97d4c;stop-opacity:1' /%3E%3C/linearGradient%3E%3CradialGradient id='k2'%3E%3Cstop offset='0%25' style='stop-color:%23ffd9c0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a0713a;stop-opacity:1' /%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='240' height='180' fill='%23f4d4a8'/%3E%3Cg filter='drop-shadow(0 6px 12px rgba(0,0,0,0.15))'%3E%3Crect x='50' y='50' width='140' height='90' rx='8' fill='url(%23k1)'/%3E%3Cellipse cx='120' cy='95' rx='60' ry='35' fill='url(%23k2)' opacity='0.6'/%3E%3Cpath d='M 65 65 L 175 65 M 65 80 L 175 80 M 65 95 L 175 95 M 65 110 L 175 110 M 65 125 L 175 125' stroke='%23754520' stroke-width='1' opacity='0.3'/%3E%3Ccircle cx='85' cy='75' r='3' fill='%23d66d3d' opacity='0.8'/%3E%3Ccircle cx='130' cy='85' r='2.5' fill='%23d66d3d' opacity='0.8'/%3E%3Ccircle cx='160' cy='100' r='2' fill='%23d66d3d' opacity='0.8'/%3E%3C/g%3E%3C/svg%3E" alt="Tarta" class="product-image-img"/>
+                    </div>
+                    <div class="product-info">
+                        <strong>Pasteles y tartas</strong>
+                        <small>Elaboración a encargo, ingredientes de calidad</small>
+                    </div>
                 </li>
                 <li>
-                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#cookie"></use></svg>
-                    <div class="product-info"><strong>💛 Galletas artesanales</strong><small>recetas propias</small></div>
+                    <div class="product-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b5a2b;stop-opacity:1' /%3E%3C/linearGradient%3E%3CradialGradient id='g4'%3E%3Cstop offset='0%25' style='stop-color:%23e8c9a0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23754520;stop-opacity:1' /%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='240' height='180' fill='%23f4d4a8'/%3E%3Cg filter='drop-shadow(0 4px 10px rgba(0,0,0,0.12))'%3E%3Ccircle cx='70' cy='80' r='32' fill='url(%23g3)'/%3E%3Ccircle cx='170' cy='75' r='35' fill='url(%23g3)'/%3E%3Ccircle cx='120' cy='110' r='30' fill='url(%23g3)'/%3E%3Ccircle cx='70' cy='80' r='28' fill='url(%23g4)' opacity='0.7'/%3E%3Ccircle cx='170' cy='75' r='31' fill='url(%23g4)' opacity='0.7'/%3E%3Ccircle cx='120' cy='110' r='26' fill='url(%23g4)' opacity='0.7'/%3E%3Ccircle cx='55' cy='65' r='4' fill='%23d66d3d' opacity='0.6'/%3E%3Ccircle cx='80' cy='60' r='3' fill='%23d66d3d' opacity='0.6'/%3E%3Ccircle cx='155' cy='55' r='3.5' fill='%23d66d3d' opacity='0.6'/%3E%3Ccircle cx='100' cy='125' r='3' fill='%23d66d3d' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E" alt="Galletas" class="product-image-img"/>
+                    </div>
+                    <div class="product-info">
+                        <strong>Galletas artesanales</strong>
+                        <small>Recetas tradicionales, sabor casero auténtico</small>
+                    </div>
                 </li>
                 <li>
-                    <svg class="product-icon" viewBox="0 0 24 24"><use href="#heart"></use></svg>
-                    <div class="product-info"><strong>❤️ Pan especial</strong><small>hecho con amor</small></div>
+                    <div class="product-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'%3E%3Cdefs%3E%3ClinearGradient id='p1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b5a2b;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='p2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8c9a0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c97d4c;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='180' fill='%23f4d4a8'/%3E%3Cg filter='drop-shadow(0 6px 14px rgba(0,0,0,0.14))'%3E%3Cpath d='M 60 130 L 80 50 L 120 40 L 160 50 L 180 130 L 120 145 Z' fill='url(%23p1)'/%3E%3Cpath d='M 65 125 L 85 55 L 120 45 L 155 55 L 175 125 L 120 138 Z' fill='url(%23p2)' opacity='0.8'/%3E%3Cpath d='M 75 80 L 95 75 M 85 95 L 110 90 M 100 110 L 125 105 M 130 95 L 150 90 M 145 80 L 160 75' stroke='%23754520' stroke-width='1.5' opacity='0.6' stroke-linecap='round'/%3E%3Cpath d='M 85 65 Q 120 55 155 65' stroke='%238b5a2b' stroke-width='2' opacity='0.4' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" alt="Pan especial" class="product-image-img"/>
+                    </div>
+                    <div class="product-info">
+                        <strong>Pan especial</strong>
+                        <small>Harinas seleccionadas y fermentación lenta (18h)</small>
+                    </div>
                 </li>
             </ul>
         </section>
 
-        <!-- NOSOTROS -->
-        <section id="nosotros" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-nosotros">
+        <!-- NOSOTROS — Story & Warmth -->
+        <section id="nosotros" class="tab-panel" role="tabpanel">
             <div class="section-header">
-                <h2>📖 Sobre Nosotros 📖</h2>
-                <div class="decorative-icon" aria-hidden="true">
-                    <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
+                <h2>Nuestra Historia</h2>
+                <div class="decorative-icon">
+                    <svg><use href="#wheat"></use></svg>
                 </div>
             </div>
 
             <article class="nosotros-card">
-                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#book"></use></svg></div>
+                <div class="card-icon">
+                    <svg><use href="#book"></use></svg>
+                </div>
                 <div class="card-content">
-                    <h3>📚 Nuestra Historia</h3>
-                    <p>Desde hace décadas somos una panadería de barrio: obrador temprano, recetas transmitidas y paciencia en cada fermentación. El proceso lo hacemos visible en un mostrador que siempre huele a horno.</p>
+                    <h3>Más de 40 años de tradición</h3>
+                    <p>Desde el amanecer, los hornos de Las Torres producen pan como hace décadas. Cada fermentación respeta tiempos, cada masa se trabaja con las manos. Es el oficio que nos define: recetas familiares, técnica probada, ingredientes que importan.</p>
                 </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#pin"></use></svg></div>
+                <div class="card-icon">
+                    <svg><use href="#pin"></use></svg>
+                </div>
                 <div class="card-content">
-                    <h3>🏘️ Nuestro Lugar</h3>
-                    <p>Ubicados en la calle principal del barrio, la panadería es un punto de paso: vecinos, paseantes y familias encuentran aquí panes y dulces hechos con ingredientes seleccionados.</p>
+                    <h3>Un lugar en el corazón del barrio</h3>
+                    <p>La panadería no es una tienda más. Es donde vuelven cada mañana, donde se conocen nombres, donde preguntan «¿me dejas tu favorito?». En la calle Velázquez, el olor a pan recién horneado es la señal de que estamos aquí, trabajando.</p>
                 </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#handshake"></use></svg></div>
+                <div class="card-icon">
+                    <svg><use href="#bread"></use></svg>
+                </div>
                 <div class="card-content">
-                    <h3>🤝 Compartimos Momentos</h3>
-                    <p>La relación con quienes vienen es parte del oficio: un saludo, una recomendación, saber cuál es el pan favorito de cada uno. Esa atención marca la diferencia.</p>
+                    <h3>Ingredientes que importan</h3>
+                    <p>No usamos aditivos que no entendamos. Harina de molino, levadura fresca, sal marina, agua. A veces mantequilla pura, a veces masa madre que llevamos guardada años. Cada producto es lo que debe ser: comida real, sin trucos.</p>
                 </div>
             </article>
 
             <article class="nosotros-card">
-                <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#star"></use></svg></div>
+                <div class="card-icon">
+                    <svg><use href="#wheat"></use></svg>
+                </div>
                 <div class="card-content">
-                    <h3>⭐ Nuestra Misión</h3>
-                    <p>Ofrecer piezas consistentes y sabrosas, cuidando técnica y materia prima para que cada producto llegue recién hecho y con carácter.</p>
+                    <h3>El oficio sigue vivo</h3>
+                    <p>Mantener una panadería artesana hoy es acto de resistencia. Pero cada mañana, cuando abro el horno y sale ese vapor cálido, recuerdo por qué: porque el pan hecho bien sigue siendo lo más simple y lo más importante.</p>
                 </div>
             </article>
         </section>
 
-        <!-- CONTACTO -->
-        <section id="contacto" class="tab-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab-contacto">
+        <!-- CONTACTO — Call to Action -->
+        <section id="contacto" class="tab-panel" role="tabpanel">
             <div class="section-header">
-                <h2>📞 Contacto 📞</h2>
-                <div class="decorative-icon" aria-hidden="true">
-                    <svg class="icon" width="44" height="44"><use href="#wheat"></use></svg>
+                <h2>Visitanos</h2>
+                <div class="decorative-icon">
+                    <svg><use href="#phone"></use></svg>
                 </div>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-card">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><use href="#pin"></use></svg>
-                    <h3>📍 Dirección</h3>
-                    <p>Calle Velázquez 123<br>Las Lagunas de Mijas<br>Málaga, España</p>
+                    <div class="contact-icon">
+                        <svg><use href="#pin"></use></svg>
+                    </div>
+                    <h3>Dirección</h3>
+                    <p><strong>Calle Velázquez, 123</strong><br>Las Lagunas de Mijas<br>Málaga, 29649 España<br><br><small>Abierto de 7:00 a 14:00 h.</small></p>
                 </div>
                 <div class="contact-card">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><use href="#handshake"></use></svg>
-                    <h3>☎️ Teléfono</h3>
-                    <p><a href="tel:+34952123456">+34 952 123 456</a></p>
+                    <div class="contact-icon">
+                        <svg><use href="#phone"></use></svg>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+34952123456"><strong>+34 952 123 456</strong></a><br><br><small>Llama para encargos de tartas y panes especiales</small></p>
                 </div>
                 <div class="contact-card">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><use href="#book"></use></svg>
-                    <h3>✉️ Email</h3>
-                    <p><a href="mailto:info@panaderialaslastorres.es">info@panaderialaslastorres.es</a></p>
+                    <div class="contact-icon">
+                        <svg><use href="#mail"></use></svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@panaderialaslastorres.es"><strong>info@panaderialaslastorres.es</strong></a><br><br><small>Respuesta en menos de 24h</small></p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-decoration" aria-hidden="true"><svg class="icon" width="32" height="32"><use href="#wheat"></use></svg></div>
-        <small>© 2025 Panadería Las Torres — 🍃 Hecho con oficio y masa fresca 🍃</small>
+        <div class="footer-decoration">
+            <svg><use href="#wheat"></use></svg>
+        </div>
+        <small>© 2025 Panadería Las Torres — Oficio, tradición y masa fresca desde 1982</small>
     </footer>
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const links = document.querySelectorAll('nav a');
+        const navLinks = document.querySelectorAll('.nav-link');
         const panels = document.querySelectorAll('.tab-panel');
 
-        function activate(id, updateHistory = true) {
-            panels.forEach(p => p.classList.toggle('active', p.id === id));
-            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-            if (updateHistory) history.replaceState(null, '', '#' + id);
-            const panel = document.getElementById(id);
-            if (panel) panel.focus();
+        function activateTab(targetId) {
+            panels.forEach(p => p.classList.remove('active'));
+            navLinks.forEach(a => a.classList.remove('active'));
+
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+                document.querySelector(`a[href="#${targetId}"]`)?.classList.add('active');
+                history.replaceState(null, '', `#${targetId}`);
+            }
         }
 
-        links.forEach(a => {
-            a.addEventListener('click', function (e) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const id = this.getAttribute('href').slice(1);
-                activate(id);
+                const targetId = link.getAttribute('href').substring(1);
+                activateTab(targetId);
             });
         });
 
-        const initial = (location.hash && location.hash.slice(1)) || (panels[0] && panels[0].id);
-        if (initial) activate(initial, false);
+        const initialTab = location.hash.substring(1) || 'productos';
+        activateTab(initialTab);
     });
     </script>
 </body>

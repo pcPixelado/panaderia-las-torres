@@ -1,296 +1,755 @@
 /* =========================
    Variables & Base Reset
    ========================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-1: #fff7f1;
-    --bg-2: #fff0e6;
-    --cream: #f7eadf;
-    --accent: #c94f2c;
-    --accent-2: #ffb366;
-    --text: #3b2f2a;
-    --muted: #7c6b60;
-    --card-shadow: 0 8px 30px rgba(59,47,42,0.12);
+    --warm-cream: #fef8f3;
+    --golden: #f4d4a8;
+    --bronze: #c97d4c;
+    --bronze-dark: #964c29;
+    --text-dark: #2a1810;
+    --text-warm: #5c3d2e;
+    --shadow-warm: 0 12px 32px rgba(42, 24, 16, 0.12);
+    --shadow-deep: 0 20px 48px rgba(150, 76, 41, 0.14);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html, body { 
+    height: 100%; 
+}
+
 body {
-    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background:
-        radial-gradient(1200px 600px at 10% 10%, rgba(255,188,120,0.08), transparent 8%),
-        radial-gradient(900px 400px at 90% 90%, rgba(201,79,44,0.03), transparent 6%),
-        linear-gradient(180deg, var(--bg-1), var(--bg-2));
-    color: var(--text);
+    font-family: 'Inter', -apple-system, system-ui, "Segoe UI", sans-serif;
+    background: 
+        radial-gradient(1400px 700px at 50% 0%, rgba(244, 212, 168, 0.15), transparent 25%),
+        radial-gradient(900px 500px at 10% 80%, rgba(201, 125, 76, 0.08), transparent 20%),
+        linear-gradient(180deg, #fefcf9 0%, var(--warm-cream) 100%);
+    color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.45;
-    padding: 36px;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
 }
 
-/* Wrapper — keep consistent max width */
 main, header, section {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* =========================
-   Header / Nav
+   Hero / Header
    ========================= */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 22px;
-    margin-bottom: 32px;
+    gap: 48px;
+    padding: 32px 48px;
+    margin: 0;
     position: relative;
-    background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
-    border-radius: 18px;
-    box-shadow: var(--card-shadow);
-    backdrop-filter: blur(6px) saturate(120%);
-    overflow: hidden;
-    animation: floatUp .45s ease both;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 212, 168, 0.4) 100%);
+    border-bottom: 1px solid rgba(201, 125, 76, 0.1);
+    box-shadow: 0 8px 24px rgba(42, 24, 16, 0.08);
+    backdrop-filter: blur(10px);
+    z-index: 20;
 }
+
 header::before {
     content: "";
     position: absolute;
-    right: -120px;
-    top: -60px;
-    width: 420px;
-    height: 420px;
-    background:
-        radial-gradient(circle at 30% 30%, rgba(255,182,120,0.18), transparent 30%),
-        radial-gradient(circle at 70% 70%, rgba(201,79,44,0.06), transparent 25%);
-    transform: rotate(18deg);
-    filter: blur(18px);
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: 
+        radial-gradient(800px 200px at 50% -20%, rgba(244, 212, 168, 0.25), transparent 40%),
+        radial-gradient(600px 150px at 80% 0%, rgba(201, 125, 76, 0.08), transparent 30%);
     pointer-events: none;
-    opacity: 0.9;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     font-weight: 700;
-    color: var(--text);
-    font-size: 34px;
-    letter-spacing: 0.6px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-h1::after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--accent), var(--accent-2));
-    box-shadow: 0 6px 18px rgba(201,79,44,0.25);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--bronze) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 42px;
+    letter-spacing: -0.8px;
+    flex: 0 1 auto;
+    position: relative;
+    z-index: 2;
 }
 
-/* Nav */
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bronze), var(--golden));
+    margin-top: 12px;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(201, 125, 76, 0.2);
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: center;
+    flex-wrap: wrap;
 }
+
 nav a {
     text-decoration: none;
-    color: var(--text);
-    font-weight: 600;
-    padding: 10px 14px;
-    border-radius: 10px;
-    transition: all .22s ease;
-    background: transparent;
+    color: var(--text-warm);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(244, 212, 168, 0.2);
+    border: 2px solid rgba(201, 125, 76, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    text-align: center;
 }
+
+nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--bronze), var(--golden));
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top center, rgba(244, 212, 168, 0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
 nav a:hover {
+    color: #fff;
+    background: linear-gradient(135deg, var(--bronze) 0%, var(--golden) 100%);
+    border-color: var(--bronze);
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(201,79,44,0.12);
-    color: var(--accent);
-    background: rgba(255,255,255,0.5);
+    box-shadow: 0 12px 32px rgba(201, 125, 76, 0.3);
 }
+
+nav a:hover::before {
+    transform: translateX(0);
+}
+
+nav a:hover::after {
+    opacity: 1;
+}
+
 nav a.active {
     color: #fff;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    box-shadow: 0 10px 26px rgba(201,79,44,0.14);
+    background: linear-gradient(135deg, var(--bronze) 0%, var(--golden) 100%);
+    border-color: transparent;
+    box-shadow: 0 14px 36px rgba(201, 125, 76, 0.35);
     transform: translateY(-2px);
+}
+
+nav a.active::before {
+    transform: translateX(0);
 }
 
 /* =========================
    Sections & Typography
    ========================= */
+main {
+    padding: 0 48px;
+}
+
 section {
-    background: transparent;
-    margin-bottom: 22px;
-    padding: 22px;
-    border-radius: 14px;
-}
-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    color: var(--text);
-    margin-bottom: 14px;
-    letter-spacing: 0.4px;
-}
-
-/* Decorative icon used in headers */
-.decorative-icon { width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; }
-.decorative-icon .icon,
-.footer-decoration .icon { fill: none; stroke: rgba(201,79,44,0.95); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity:0.95; }
-
-/* Small text */
-small { color: var(--muted); font-size: 13px; }
-
-/* =========================
-   Products list
-   ========================= */
-.products-list {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap:16px;
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-.products-list li {
-    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,245,0.9));
-    border-radius: 12px;
-    padding: 18px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: var(--card-shadow);
-    transition: transform .25s cubic-bezier(.2,.9,.3,1), box-shadow .25s;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(254, 248, 243, 0.9) 100%);
+    margin: 48px auto;
+    padding: 52px 48px;
+    border-radius: 18px;
+    border: 2px solid rgba(244, 212, 168, 0.3);
+    box-shadow: var(--shadow-warm);
+    animation: fadeInUp 0.7s ease 0.15s both;
     position: relative;
     overflow: hidden;
 }
-.products-list li:hover {
-    transform: translateY(-8px) rotate(-0.2deg);
-    box-shadow: 0 20px 40px rgba(59,47,42,0.16);
+
+section::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(244, 212, 168, 0.15), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
-.products-list li::before {
-    content:"";
-    width:56px;
-    height:56px;
-    border-radius:10px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    display:inline-block;
-    flex:0 0 56px;
-    box-shadow:0 8px 24px rgba(201,79,44,0.14);
-    transform: translateX(-6px);
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.product-icon,
-.card-icon svg,
-.contact-icon { width:44px; height:44px; display:block; }
-.product-icon use,
-.card-icon use,
-.contact-icon use { stroke: rgba(59,47,42,0.95); stroke-width: 1.4; fill: transparent; }
-.product-info strong { display:block; font-weight:700; color:#2f231f; }
-.product-info small { color:#7a675f; font-size:13px; }
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    margin: 0;
+    flex: 1;
+}
+
+.decorative-icon {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(244, 212, 168, 0.4), rgba(201, 125, 76, 0.15));
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(201, 125, 76, 0.1);
+}
+
+.decorative-icon svg,
+.footer-decoration svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--bronze);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+small {
+    color: var(--text-warm);
+    font-size: 14px;
+    font-weight: 400;
+}
 
 /* =========================
-   'Nosotros' cards
+   Products Grid - HERO SECTION
+   ========================= */
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.products-list li {
+    background: linear-gradient(135deg, #fff 0%, rgba(254, 248, 243, 0.95) 100%);
+    border-radius: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid rgba(244, 212, 168, 0.4);
+    box-shadow: var(--shadow-warm);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.products-list li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bronze), var(--golden));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+}
+
+.products-list li::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(244, 212, 168, 0.1), transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.products-list li:hover {
+    transform: translateY(-12px); /* eliminada la rotación 3D que daba sensación de zoom */
+    box-shadow: var(--shadow-deep);
+    border-color: rgba(201, 125, 76, 0.25);
+}
+
+.products-list li:hover::before {
+    transform: scaleX(1);
+}
+
+.products-list li:hover::after {
+    opacity: 1;
+}
+
+/* Product image / visual area */
+.product-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--golden) 0%, rgba(201, 125, 76, 0.2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;      /* ajusta la imagen al contenedor sin recortar/zoom */
+    object-position: center;  /* centra la imagen */
+    display: block;
+    position: relative;
+    z-index: 2;
+    transform: none !important;     /* fuerza ausencia de escalado */
+    transition: none !important;    /* evita transiciones de escala inesperadas */
+    background-color: rgba(244,212,168,0.06); /* pequeño fondo para rellenar espacios si hay letterbox */
+}
+
+.product-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 4px 12px rgba(150, 76, 41, 0.15));
+}
+
+.product-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--text-dark);
+    stroke-width: 1.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 2px 4px rgba(150, 76, 41, 0.1));
+}
+
+.product-info {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-info strong {
+    display: block;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 18px;
+    letter-spacing: -0.3px;
+}
+
+.product-info small {
+    color: var(--text-warm);
+    font-size: 14px;
+    display: block;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* =========================
+   About Cards - WARMTH & STORY
    ========================= */
 .nosotros-card {
-    display:flex;
-    gap:18px;
-    align-items:flex-start;
-    padding:24px;
-    border-radius:14px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,248,244,0.9));
-    border: 1px solid rgba(34,24,20,0.04);
-    box-shadow: 0 14px 40px rgba(41,33,29,0.06);
-    margin-bottom:22px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 32px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 248, 243, 0.95) 100%);
+    border: 2px solid rgba(244, 212, 168, 0.3);
+    box-shadow: 0 10px 28px rgba(42, 24, 16, 0.06);
+    margin-bottom: 24px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
+
+.nosotros-card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(244, 212, 168, 0.2), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.nosotros-card:hover {
+    box-shadow: var(--shadow-deep);
+    transform: translateX(8px);
+    border-color: rgba(201, 125, 76, 0.2);
+}
+
 .card-icon {
-    flex: 0 0 64px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    background: linear-gradient(135deg, rgba(201,79,44,0.12), rgba(255,180,100,0.06));
+    flex: 0 0 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(244, 212, 168, 0.5), rgba(201, 125, 76, 0.15));
+    height: 72px;
+    box-shadow: 0 6px 16px rgba(201, 125, 76, 0.12);
 }
+
+.card-icon svg {
+    width: 44px;
+    height: 44px;
+    stroke: var(--bronze);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.card-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
 .card-content h3 {
-    margin: 0 0 8px 0;
-    font-family: 'Playfair Display', serif;
-    color: #b2492a;
-    font-size: 18px;
+    margin: 0 0 12px 0;
+    font-family: 'Lora', serif;
+    color: var(--bronze-dark);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
+
 .card-content p {
     margin: 0;
-    color: #6f5e55;
-    line-height: 1.65;
+    color: var(--text-warm);
+    line-height: 1.8;
+    font-size: 15px;
 }
 
 /* =========================
-   Contact cards
+   Contact Cards - CTA READY
    ========================= */
 .contact-grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap:18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
 }
+
 .contact-card {
-    padding:18px;
-    border-radius:12px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,246,0.92));
-    border: 1px solid rgba(34,24,20,0.04);
-    text-align:center;
-    box-shadow: 0 10px 30px rgba(40,32,28,0.05);
+    padding: 32px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fff 0%, rgba(254, 248, 243, 0.95) 100%);
+    border: 2px solid rgba(244, 212, 168, 0.3);
+    text-align: center;
+    box-shadow: var(--shadow-warm);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
+
+.contact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top center, rgba(244, 212, 168, 0.1), transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-deep);
+    border-color: rgba(201, 125, 76, 0.2);
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(244, 212, 168, 0.5), rgba(201, 125, 76, 0.15));
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(201, 125, 76, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--bronze);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .contact-card h3 {
-    margin:10px 0 6px 0;
-    color:#2f231f;
-    font-family:'Playfair Display', serif;
+    margin: 0 0 14px 0;
+    font-family: 'Lora', serif;
+    color: var(--text-dark);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
-.contact-card a { color:#b2492a; font-weight:600; text-decoration:none; }
-.contact-card a:hover { text-decoration:underline; color:#c86a3f; }
+
+.contact-card p {
+    margin: 0;
+    color: var(--text-warm);
+    font-size: 15px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-card a {
+    color: var(--bronze);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-card a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--bronze);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--bronze-dark);
+}
+
+.contact-card a:hover::after {
+    transform: scaleX(1);
+}
+
+/* =========================
+   Tab System
+   ========================= */
+.tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    outline: none;
+}
+
+.tab-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* =========================
    Footer
    ========================= */
 footer {
-    padding: 28px 0 40px;
-    color: var(--muted);
-    text-align:center;
+    padding: 48px 48px 60px;
+    color: var(--text-warm);
+    text-align: center;
+    margin-top: 60px;
+    background: linear-gradient(180deg, transparent 0%, rgba(244, 212, 168, 0.1) 100%);
+    border-top: 2px solid rgba(244, 212, 168, 0.2);
+    position: relative;
 }
-.footer-decoration .icon { stroke-width:1.2; }
+
+.footer-decoration {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+footer:hover .footer-decoration {
+    transform: scale(1.1) rotateZ(-8deg);
+}
+
+footer small {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
 
 /* =========================
-   Interaction / Animations
+   Responsive Design
    ========================= */
-@keyframes floatUp {
-    from { opacity:0; transform:translateY(12px); }
-    to   { opacity:1; transform:translateY(0); }
-}
-header, section { animation: floatUp .45s ease both; }
-
-/* Tab panels */
-.tab-panel { display:none; opacity:0; transform:translateY(6px); transition: opacity .28s ease, transform .28s ease; outline:none; }
-.tab-panel.active { display:block; opacity:1; transform:translateY(0); }
-
-/* Hover lift for cards */
-.products-list li:hover, .nosotros-card:hover, .contact-card:hover {
-    transform: translateY(-6px);
-    transition: transform .22s ease, box-shadow .22s ease;
-    box-shadow: 0 20px 50px rgba(40,32,28,0.08);
+@media (max-width: 1200px) {
+    body { padding: 0; }
+    header { padding: 28px 36px; gap: 36px; }
+    main { padding: 0 36px; }
+    section { padding: 40px 36px; margin: 40px auto; }
+    h1 { font-size: 36px; }
+    
+    nav a {
+        font-size: 16px;
+        padding: 12px 28px;
+        min-width: 130px;
+    }
 }
 
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 1120px) {
-    body { padding: 28px; }
-}
-@media (max-width: 720px) {
-    body { padding: 18px; }
-    header { flex-direction: column; align-items: flex-start; }
-    nav ul { flex-wrap: wrap; }
+@media (max-width: 768px) {
+    header { 
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px 24px;
+        position: sticky;
+        top: 0;
+    }
+    
     h1 { font-size: 28px; }
-    .products-list { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
-    .nosotros-card { flex-direction: column; text-align: left; align-items: flex-start; }
-    .card-icon { width: 52px; height: 52px; }
-    .product-icon, .card-icon svg, .contact-icon { width: 40px; height: 40px; }
+    
+    nav ul { 
+        width: 100%;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+    
+    nav a { 
+        flex: 1;
+        min-width: 100px;
+        font-size: 15px;
+        padding: 12px 16px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    main { padding: 0 24px; }
+    
+    section {
+        padding: 32px 24px;
+        margin: 32px auto;
+        border-radius: 14px;
+    }
+    
+    section h2 { font-size: 28px; }
+    
+    .section-header { margin-bottom: 28px; }
+    
+    .products-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    
+    .product-image { height: 140px; }
+    
+    .product-icon { width: 60px; height: 60px; }
+    
+    .product-info { padding: 18px; }
+    
+    .product-info strong { font-size: 16px; }
+    
+    .nosotros-card {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+    }
+    
+    .card-icon { flex: 0 0 60px; height: 60px; }
+    
+    .contact-grid { grid-template-columns: 1fr; }
+    
+    footer { padding: 40px 24px 48px; }
+}
+
+@media (max-width: 480px) {
+    header { padding: 18px 16px; }
+    h1 { font-size: 24px; }
+    
+    nav ul {
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    
+    nav a { 
+        flex: 1;
+        min-width: 80px;
+        font-size: 13px;
+        padding: 11px 12px;
+        min-width: auto;
+    }
+    
+    main { padding: 0 16px; }
+    section { padding: 24px 16px; margin: 24px auto; }
+    section h2 { font-size: 22px; }
+    .products-list { grid-template-columns: 1fr; gap: 16px; }
+    .contact-grid { grid-template-columns: 1fr; }
 }
