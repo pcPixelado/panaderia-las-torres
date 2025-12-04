@@ -845,7 +845,7 @@ body {
     backdrop-filter: blur(4px);
 }
 
-.modal.active {
+.modal.open {
     display: flex;
     align-items: center;
     justify-content: center;
