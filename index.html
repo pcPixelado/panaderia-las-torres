@@ -1,188 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Panadería Las Torres — Pan Artesano</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Panadería Las Torres — Pan artesano, croissants y pasteles. Tradición y fermentación lenta desde 1982. Haz tu pedido online o ven a visitarnos." />
+    <meta name="author" content="Panadería Las Torres" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Panadería Las Torres — Pan Artesano" />
+    <meta property="og:description" content="Panadería Las Torres — Tradición y sabor desde 1982. Pedidos y encargos." />
+    <meta property="og:type" content="website" />
+    <!-- Favicon simple (emoji fallback) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍞</text></svg>">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <!-- Skip link for accessibility -->
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
     <!-- Header/Navbar -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon">🍞</span>
-                Panadería Las Torres
-            </div>
-            <nav class="nav-links">
-                <a href="#productos" class="nav-link" data-section="productos">
-                    <span class="nav-text">Productos</span>
-                    <span class="nav-underline"></span>
-                </a>
-                <a href="#nosotros" class="nav-link" data-section="nosotros">
-                    <span class="nav-text">Nosotros</span>
-                    <span class="nav-underline"></span>
-                </a>
-                <a href="#contacto" class="nav-link" data-section="contacto">
-                    <span class="nav-text">Contacto</span>
-                    <span class="nav-underline"></span>
-                </a>
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="#main" class="logo" aria-label="Panadería Las Torres — Ir al inicio">
+                <span class="logo-icon" aria-hidden="true">🍞</span>
+                <span class="logo-text">Panadería Las Torres</span>
+            </a>
+
+            <button class="hamburger" id="hamburgerBtn" aria-controls="primaryNav" aria-expanded="false" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="primaryNav" class="nav-links" role="navigation" aria-label="Navegación principal">
+                <a href="#productos" class="nav-link" data-section="productos">Productos <span class="sr-only">(Ir a productos)</span></a>
+                <a href="#nosotros" class="nav-link" data-section="nosotros">Nosotros <span class="sr-only">(Ir a nosotros)</span></a>
+                <a href="#contacto" class="nav-link" data-section="contacto">Contacto <span class="sr-only">(Ir a contacto)</span></a>
+                <a href="#carrito" class="nav-link cart-link" id="cartToggle" aria-haspopup="dialog" aria-expanded="false">Carrito (<span id="cartCount">0</span>)</a>
             </nav>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </header>
 
+    <main id="main" tabindex="-1">
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Pan Artesano<br>Recién Horneado</h1>
+    <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-content container">
+            <h1 id="heroTitle" class="hero-title">Pan Artesano<br>Recién Horneado</h1>
             <p class="hero-subtitle">Tradición, calidad y sabor en cada producto desde 1982</p>
             <div class="hero-cta">
-                <a href="#productos" class="cta-link">
-                    Descubre Nuestros Productos
-                    <span class="arrow-icon">→</span>
-                </a>
+                <a href="#productos" class="cta-link">Descubre Nuestros Productos <span class="arrow-icon" aria-hidden="true">→</span></a>
+                <a class="cta-secondary" href="#contacto" aria-label="Hacer un encargo">Hacer encargo</a>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
+        <div class="hero-scroll-indicator" aria-hidden="true">
             <span>Desplázate para explorar</span>
-            <div class="scroll-arrow"></div>
+            <div class="scroll-arrow" role="presentation"></div>
         </div>
     </section>
 
-    <!-- Sección de Productos -->
-    <section id="productos" class="productos section">
+    <!-- Productos -->
+    <section id="productos" class="productos section" aria-labelledby="productosTitle">
         <div class="container">
             <div class="section-header">
-                <h2>Nuestros Productos</h2>
+                <h2 id="productosTitle">Nuestros Productos</h2>
                 <p class="section-subtitle">Elaborados con ingredientes premium y técnica artesana</p>
             </div>
 
-            <div class="productos-filter">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="pan">Panes</button>
-                <button class="filter-btn" data-filter="dulce">Dulces</button>
-                <button class="filter-btn" data-filter="especial">Especiales</button>
+            <div class="productos-filter" role="tablist" aria-label="Filtros de productos">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+                <button class="filter-btn" data-filter="pan" role="tab" aria-selected="false">Panes</button>
+                <button class="filter-btn" data-filter="dulce" role="tab" aria-selected="false">Dulces</button>
+                <button class="filter-btn" data-filter="especial" role="tab" aria-selected="false">Especiales</button>
             </div>
-            
-            <div class="productos-grid">
-                <div class="producto-card" data-category="pan">
+
+            <div class="productos-grid" id="productosGrid" aria-live="polite">
+                <!-- Producto example - keep same content but add data-id and loading=lazy -->
+                <article class="producto-card" data-category="pan" data-id="p1" aria-labelledby="p1-title">
                     <div class="producto-img">
-                        <img src="https://imgs.search.brave.com/Ad7T_mX0SMdZvYdPFQTR_YODaPX329_BejxNKkWt480/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bGF2YW5ndWFyZGlh/LmNvbS9maWxlcy9j/b250ZW50X2ltYWdl/X21vYmlsZV9maWx0/ZXIvZmlsZXMvZnAv/dXBsb2Fkcy8yMDIx/LzEwLzA1LzYxNWM2/YjQyZWE3MzEucl9k/LjEyNDMtMTAwMC5q/cGVn">
+                        <img loading="lazy" decoding="async" src="https://imgs.search.brave.com/Ad7T_mX0SMdZvYdPFQTR_YODaPX329_BejxNKkWt480/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bGF2YW5ndWFyZGlh/LmNvbS9maWxlcy9j/b250ZW50X2ltYWdl/X21vYmlsZV9maWx0/ZXIvZmlsZXMvZnAv/dXBsb2Fkcy8yMDIx/LzEwLzA1LzYxNWM2/YjQyZWE3MzEucl9k/LjEyNDMtMTAwMC5q/cGVn" alt="Pan de Molde - Panadería Las Torres">
                         <div class="producto-overlay">
-                            <button class="overlay-btn">Ver Detalles</button>
+                            <button class="overlay-btn" aria-haspopup="dialog" aria-controls="productModal">Ver Detalles</button>
                         </div>
                     </div>
                     <div class="producto-content">
-                        <h3>Pan de Molde</h3>
+                        <h3 id="p1-title">Pan de Molde</h3>
                         <p class="descripcion">Suave, esponjoso y recién hecho cada mañana</p>
                         <div class="producto-footer">
-                            <span class="precio">$3.50</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <span class="precio" data-price="3.50">3,50 €</span>
+                            <div class="rating" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="producto-actions">
+                            <button class="btn-small add-to-cart" aria-label="Añadir Pan de Molde al carrito">Añadir</button>
+                            <a class="btn-link whatsapp-order" href="#" data-product="Pan de Molde">Pedir por WhatsApp</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="producto-card" data-category="pan">
+                <!-- Resto de productos (mantengo tu contenido) -->
+                <article class="producto-card" data-category="pan" data-id="p2" aria-labelledby="p2-title">
                     <div class="producto-img">
-                        <img src="https://imgs.search.brave.com/i-NoIDtCWqAiNGK1VL2ufvObxCZ2K7DLD3fiQi1r46s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzc2LzE5LzQy/LzM2MF9GXzE3NjE5/NDIwOF9pUVY0YVg4/YTM4UGp6empDUUdH/enk0ZHVmNkZzeE44/Vi5qcGc" alt="Baguette">
-                        <div class="producto-overlay">
-                            <button class="overlay-btn">Ver Detalles</button>
-                        </div>
+                        <img loading="lazy" decoding="async" src="https://imgs.search.brave.com/i-NoIDtCWqAiNGK1VL2ufvObxCZ2K7DLD3fiQi1r46s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzc2LzE5LzQy/LzM2MF9GXzE3NjE5/NDIwOF9pUVY0YVg4/YTM4UGp6empDUUdH/enk0ZHVmNkZzeE44/Vi5qcGc" alt="Baguettes">
+                        <div class="producto-overlay"><button class="overlay-btn" aria-haspopup="dialog" aria-controls="productModal">Ver Detalles</button></div>
                     </div>
                     <div class="producto-content">
-                        <h3>Baguettes</h3>
+                        <h3 id="p2-title">Baguettes</h3>
                         <p class="descripcion">Corteza crujiente, miga tierna y aroma irresistible</p>
                         <div class="producto-footer">
-                            <span class="precio">$2.99</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <span class="precio" data-price="2.99">2,99 €</span>
+                            <div class="rating" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="producto-actions">
+                            <button class="btn-small add-to-cart" aria-label="Añadir Baguettes al carrito">Añadir</button>
+                            <a class="btn-link whatsapp-order" href="#" data-product="Baguettes">Pedir por WhatsApp</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="producto-card" data-category="dulce">
+                <article class="producto-card" data-category="dulce" data-id="p3" aria-labelledby="p3-title">
                     <div class="producto-img">
-                        <img src="https://imgs.search.brave.com/y8ZAV-qQ45xw8AKuiu5tmVLJ5g5ZJ-xXk2poOf4Tins/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbHVz/LnVuc3BsYXNoLmNv/bS9wcmVtaXVtX3Bo/b3RvLTE2NjE3NDM4/MjM4MjktMzI2Yjc4/MTQzYjMwP2ZtPWpw/ZyZxPTYwJnc9MzAw/MCZpeGxpYj1yYi00/LjEuMCZpeGlkPU0z/d3hNakEzZkRCOE1I/eHpaV0Z5WTJoOE1Y/eDhZM0p2YVhOellX/NTBmR1Z1ZkRCOGZE/QjhmSHd3" alt="Croissant">
-                        <div class="producto-overlay">
-                            <button class="overlay-btn">Ver Detalles</button>
-                        </div>
+                        <img loading="lazy" decoding="async" src="https://imgs.search.brave.com/y8ZAV-qQ45xw8AKuiu5tmVLJ5g5ZJ-xXk2poOf4Tins/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbHVz/LnVuc3BsYXNoLmNv/bS9wcmVtaXVtX3Bo/b3RvLTE2NjE3NDM4/MjM4MjktMzI2Yjc4/MTQzYjMwP2ZtPWpw/ZyZxPTYwJnc9MzAw/MCZpeGxpYj1yYi00/LjEuMCZpeGlkPU0z/d3hNakEzZkRCOE1I/eHpaV0Z5WTJoOE1Y/eDhZM0p2YVhOellX/NTBmR1Z1ZkRCOGZE/QjhmSHd3" alt="Croissants">
+                        <div class="producto-overlay"><button class="overlay-btn" aria-haspopup="dialog" aria-controls="productModal">Ver Detalles</button></div>
                     </div>
                     <div class="producto-content">
-                        <h3>Croissants</h3>
+                        <h3 id="p3-title">Croissants</h3>
                         <p class="descripcion">Hojaldre artesano, mantequilla pura, hecho a mano</p>
                         <div class="producto-footer">
-                            <span class="precio">$4.50</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <span class="precio" data-price="4.50">4,50 €</span>
+                            <div class="rating" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="producto-actions">
+                            <button class="btn-small add-to-cart" aria-label="Añadir Croissants al carrito">Añadir</button>
+                            <a class="btn-link whatsapp-order" href="#" data-product="Croissants">Pedir por WhatsApp</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="producto-card" data-category="especial">
+                <article class="producto-card" data-category="especial" data-id="p4" aria-labelledby="p4-title">
                     <div class="producto-img">
-                        <img src="https://imgs.search.brave.com/dFPyOFSsvIvfiMJvX9wANMeqo3vcXfVuR7bo_ADmbLM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/LmJvbnZpdmV1ci5j/b20vdGFydGEtZGUt/bmF0YS1wb3J0dWd1/ZXNhXzQwMC5qcGc" alt="Pasteles">
-                        <div class="producto-overlay">
-                            <button class="overlay-btn">Ver Detalles</button>
-                        </div>
+                        <img loading="lazy" decoding="async" src="https://imgs.search.brave.com/dFPyOFSsvIvfiMJvX9wANMeqo3vcXfVuR7bo_ADmbLM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/LmJvbnZpdmV1ci5j/b20vdGFydGEtZGUt/bmF0YS1wb3J0dWd1/ZXNhXzQwMC5qcGc" alt="Pasteles">
+                        <div class="producto-overlay"><button class="overlay-btn" aria-haspopup="dialog" aria-controls="productModal">Ver Detalles</button></div>
                     </div>
                     <div class="producto-content">
-                        <h3>Pasteles y Tartas</h3>
+                        <h3 id="p4-title">Pasteles y Tartas</h3>
                         <p class="descripcion">Elaboración a encargo, ingredientes de calidad</p>
                         <div class="producto-footer">
-                            <span class="precio">$25.00</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <span class="precio" data-price="25.00">25,00 €</span>
+                            <div class="rating" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="producto-actions">
+                            <button class="btn-small add-to-cart" aria-label="Añadir Pasteles y Tartas al carrito">Añadir</button>
+                            <a class="btn-link whatsapp-order" href="#" data-product="Pasteles y Tartas">Pedir por WhatsApp</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="producto-card" data-category="dulce">
+                <article class="producto-card" data-category="dulce" data-id="p5" aria-labelledby="p5-title">
                     <div class="producto-img">
-                        <img src="https://imgs.search.brave.com/aIYu6Bd9UO9bpCnBBwKDt8yXfcB7TUcTJ2utXpISSV8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9wcmltZXItcGxh/bm8tZ2FsbGV0YXNf/MTA0ODk0NC0yMjUx/MTAzNy5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA" alt="Galletas">
-                        <div class="producto-overlay">
-                            <button class="overlay-btn">Ver Detalles</button>
-                        </div>
+                        <img loading="lazy" decoding="async" src="https://imgs.search.brave.com/aIYu6Bd9UO9bpCnBBwKDt8yXfcB7TUcTJ2utXpISSV8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9wcmltZXItcGxh/bm8tZ2FsbGV0YXNf/MTA0ODk0NC0yMjUx/MTAzNy5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA" alt="Galletas">
+                        <div class="producto-overlay"><button class="overlay-btn" aria-haspopup="dialog" aria-controls="productModal">Ver Detalles</button></div>
                     </div>
                     <div class="producto-content">
-                        <h3>Galletas Artesanales</h3>
+                        <h3 id="p5-title">Galletas Artesanales</h3>
                         <p class="descripcion">Recetas tradicionales, sabor casero auténtico</p>
                         <div class="producto-footer">
-                            <span class="precio">$1.99</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <span class="precio" data-price="1.99">1,99 €</span>
+                            <div class="rating" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="producto-actions">
+                            <button class="btn-small add-to-cart" aria-label="Añadir Galletas Artesanales al carrito">Añadir</button>
+                            <a class="btn-link whatsapp-order" href="#" data-product="Galletas Artesanales">Pedir por WhatsApp</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="producto-card" data-category="pan">
+                <article class="producto-card" data-category="pan" data-id="p6" aria-labelledby="p6-title">
                     <div class="producto-img">
-                        <img src="https://imgs.search.brave.com/8Vt_6NS-vKQKqrVeef71rEaDFjS4Te-SaMVJt85ptEw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzI4LzQ5Lzc5/LzM2MF9GXzMyODQ5/NzkwNV9FVHFFNE9l/Tnp3QURlbEFrVEow/dE0wc2kyQkI4a3Jl/cC5qcGc" alt="Pan Especial">
-                        <div class="producto-overlay">
-                            <button class="overlay-btn">Ver Detalles</button>
-                        </div>
+                        <img loading="lazy" decoding="async" src="https://imgs.search.brave.com/8Vt_6NS-vKQKqrVeef71rEaDFjS4Te-SaMVJt85ptEw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzI4LzQ5Lzc5/LzM2MF9GXzMyODQ5/NzkwNV9FVHFFNE9l/Tnp3QURlbEFrVEow/dE0wc2kyQkI4a3Jl/cC5qcGc" alt="Pan Especial">
+                        <div class="producto-overlay"><button class="overlay-btn" aria-haspopup="dialog" aria-controls="productModal">Ver Detalles</button></div>
                     </div>
                     <div class="producto-content">
-                        <h3>Pan Especial</h3>
+                        <h3 id="p6-title">Pan Especial</h3>
                         <p class="descripcion">Harinas seleccionadas y fermentación lenta (18h)</p>
                         <div class="producto-footer">
-                            <span class="precio">$4.99</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                            <span class="precio" data-price="4.99">4,99 €</span>
+                            <div class="rating" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="producto-actions">
+                            <button class="btn-small add-to-cart" aria-label="Añadir Pan Especial al carrito">Añadir</button>
+                            <a class="btn-link whatsapp-order" href="#" data-product="Pan Especial">Pedir por WhatsApp</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Sección Sobre Nosotros -->
-    <section id="nosotros" class="sobre-nosotros section">
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="sobre-nosotros section" aria-labelledby="nosotrosTitle">
         <div class="container">
             <div class="section-header">
-                <h2>Nuestra Historia</h2>
+                <h2 id="nosotrosTitle">Nuestra Historia</h2>
                 <p class="section-subtitle">Más de 40 años de tradición y pasión por el buen pan</p>
             </div>
-            
+
             <div class="nosotros-content">
                 <div class="nosotros-text">
                     <h3>¿Quiénes Somos?</h3>
@@ -190,31 +208,31 @@
                     <p>Creemos que el pan artesano es mucho más que un producto: es el resultado del cuidado, la dedicación y el respeto por las técnicas tradicionales de fermentación lenta.</p>
                 </div>
 
-                <div class="valores-grid">
+                <div class="valores-grid" aria-hidden="false">
                     <div class="valor-card" data-wow="up">
-                        <div class="valor-icon">🌾</div>
+                        <div class="valor-icon" aria-hidden="true">🌾</div>
                         <h4>Ingredientes Premium</h4>
                         <p>Harinas seleccionadas de molino, sin aditivos innecesarios</p>
                     </div>
                     <div class="valor-card" data-wow="up">
-                        <div class="valor-icon">⏰</div>
+                        <div class="valor-icon" aria-hidden="true">⏰</div>
                         <h4>Fermentación Lenta</h4>
                         <p>Respetamos los tiempos naturales de la masa</p>
                     </div>
                     <div class="valor-card" data-wow="up">
-                        <div class="valor-icon">👨‍🍳</div>
+                        <div class="valor-icon" aria-hidden="true">👨‍🍳</div>
                         <h4>Técnica Artesana</h4>
                         <p>Cada pieza es elaborada con maestría y cuidado</p>
                     </div>
                     <div class="valor-card" data-wow="up">
-                        <div class="valor-icon">❤️</div>
+                        <div class="valor-icon" aria-hidden="true">❤️</div>
                         <h4>Pasión por el Oficio</h4>
                         <p>Amamos lo que hacemos, y se nota en cada pan</p>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline">
+            <div class="timeline" aria-hidden="false">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -247,27 +265,27 @@
         </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contacto section">
+    <!-- Contacto -->
+    <section id="contacto" class="contacto section" aria-labelledby="contactoTitle">
         <div class="container">
             <div class="section-header">
-                <h2>Contacto</h2>
+                <h2 id="contactoTitle">Contacto</h2>
                 <p class="section-subtitle">Visítanos o ponte en contacto con nosotros</p>
             </div>
 
             <div class="contacto-grid">
                 <div class="contacto-card contacto-interactive">
-                    <div class="contacto-icon">📍</div>
+                    <div class="contacto-icon" aria-hidden="true">📍</div>
                     <h3>Dirección</h3>
                     <p><strong>Calle Velázquez, 123</strong></p>
                     <p>Las Lagunas de Mijas</p>
                     <p>Málaga, 29649 España</p>
                     <p class="horario">Abierto de 7:00 a 14:00 h.</p>
-                    <a href="#" class="card-link">Ver en Google Maps →</a>
+                    <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="card-link">Ver en Google Maps →</a>
                 </div>
 
                 <div class="contacto-card contacto-interactive">
-                    <div class="contacto-icon">📞</div>
+                    <div class="contacto-icon" aria-hidden="true">📞</div>
                     <h3>Teléfono</h3>
                     <p><a href="tel:+34952123456" class="contacto-link"><strong>+34 952 123 456</strong></a></p>
                     <p class="contacto-desc">Llama para encargos de tartas y panes especiales</p>
@@ -276,7 +294,7 @@
                 </div>
 
                 <div class="contacto-card contacto-interactive">
-                    <div class="contacto-icon">📧</div>
+                    <div class="contacto-icon" aria-hidden="true">📧</div>
                     <h3>Email</h3>
                     <p><a href="mailto:info@panaderialaslastorres.es" class="contacto-link"><strong>info@panaderialaslastorres.es</strong></a></p>
                     <p class="contacto-desc">Respuesta en menos de 24 horas</p>
@@ -285,7 +303,7 @@
                 </div>
 
                 <div class="contacto-card contacto-interactive">
-                    <div class="contacto-icon">🕐</div>
+                    <div class="contacto-icon" aria-hidden="true">🕐</div>
                     <h3>Horario</h3>
                     <p><strong>Lunes a Viernes:</strong> 7:00 - 14:00</p>
                     <p><strong>Sábado:</strong> 8:00 - 13:00</p>
@@ -293,49 +311,63 @@
                 </div>
             </div>
 
-            <div class="contacto-form-section">
-                <h3>Envíanos un Mensaje</h3>
-                <form class="contacto-form" id="contactForm">
-                    <input type="text" placeholder="Tu nombre" required>
-                    <input type="email" placeholder="Tu email" required>
-                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            <div class="contacto-form-section" aria-labelledby="formTitle">
+                <h3 id="formTitle">Envíanos un Mensaje</h3>
+                <!-- Formspree example: pon tu action si quieres que envíe real -->
+                <form class="contacto-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <label class="sr-only" for="name">Nombre</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+                    <label class="sr-only" for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Tu email" required>
+                    <label class="sr-only" for="message">Mensaje</label>
+                    <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                        <button type="button" id="smsOrder" class="btn-secondary">Pedir por WhatsApp</button>
+                    </div>
+                    <p id="formNote" class="form-note" aria-live="polite"></p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Modal de Detalles MEJORADO -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
+    </main>
+
+    <!-- Carrito (modal/dialog) -->
+    <aside id="cartDrawer" class="cart-drawer" role="dialog" aria-labelledby="cartTitle" aria-hidden="true">
+        <div class="cart-inner container">
+            <button class="cart-close" aria-label="Cerrar carrito">&times;</button>
+            <h3 id="cartTitle">Tu Pedido</h3>
+            <ul id="cartItems" class="cart-items" aria-live="polite"></ul>
+            <div class="cart-summary">
+                <div>Total: <strong id="cartTotal">0,00 €</strong></div>
+                <div class="cart-actions">
+                    <button id="checkoutBtn" class="btn-primary">Pedir (WhatsApp)</button>
+                    <button id="clearCart" class="btn-link">Vaciar</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Modal de Detalles -->
+    <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
             <div class="modal-body">
                 <div class="modal-image-container">
-                    <img id="modalImg" src="" alt="Producto">
+                    <img id="modalImg" src="" alt="Imagen producto">
                 </div>
                 <div class="modal-info">
-                    <h2 id="modalTitle"></h2>
+                    <h2 id="modalTitle">Título</h2>
                     <div class="modal-rating">⭐⭐⭐⭐⭐ (125 reseñas)</div>
                     <p id="modalDesc" class="modal-description"></p>
-                    
                     <div class="modal-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Precio:</span>
-                            <span id="modalPrice" class="detail-value"></span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Disponibilidad:</span>
-                            <span class="detail-value">En stock</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Tiempo de entrega:</span>
-                            <span class="detail-value">Mismo día</span>
-                        </div>
+                        <div class="detail-item"><span class="detail-label">Precio:</span><span id="modalPrice" class="detail-value">0,00 €</span></div>
+                        <div class="detail-item"><span class="detail-label">Disponibilidad:</span><span class="detail-value">En stock</span></div>
                     </div>
-
                     <div class="modal-actions">
                         <button class="btn-add-cart">🛒 Agregar al Carrito</button>
-                        <button class="btn-order">📞 Hacer Pedido</button>
+                        <a class="btn-order" id="modalWhatsapp" href="#" target="_blank" rel="noopener">📞 Hacer Pedido</a>
                     </div>
                 </div>
             </div>
@@ -343,13 +375,13 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2025 Panadería Las Torres — Oficio, tradición y masa fresca desde 1982</p>
             <p class="footer-social">Síguenos en redes sociales</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
