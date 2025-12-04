@@ -1,21 +1,62 @@
 /* =========================
-   Variables & Base Reset
+   Professional Bakery Design System
    ========================= */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: #c97d4c;
-    --primary-dark: #964c29;
-    --primary-light: #d4a574;
-    --accent-gold: #f4d4a8;
-    --accent-cream: #fef8f3;
-    --text-dark: #2a1810;
-    --text-warm: #5c3d2e;
-    --bg-light: #fdfaf6;
-    --bg-pale: #faf6f1;
-    --shadow-sm: 0 4px 12px rgba(42, 24, 16, 0.08);
-    --shadow-md: 0 8px 24px rgba(42, 24, 16, 0.12);
-    --shadow-lg: 0 16px 40px rgba(150, 76, 41, 0.15);
+    /* Professional Color Palette */
+    --primary: #2C1810;          /* Deep Espresso Brown */
+    --primary-dark: #1a0f0a;     /* Darker Brown */
+    --primary-light: #4a2c20;    /* Lighter Brown */
+    --secondary: #D4AF37;        /* Antique Gold */
+    --secondary-light: #E6C66B;  /* Light Gold */
+    --secondary-dark: #B8860B;   /* Dark Gold */
+    --accent: #8B4513;           /* Saddle Brown */
+    --accent-light: #A0522D;     /* Light Saddle */
+    --cream: #F5F5DC;            /* Beige */
+    --cream-light: #FAF9F6;      /* Off-White */
+    --warm-white: #FEFCF8;       /* Warm White */
+
+    /* Typography */
+    --text-primary: #1C1C1C;     /* Rich Black */
+    --text-secondary: #4A4A4A;   /* Dark Gray */
+    --text-muted: #6B6B6B;       /* Medium Gray */
+    --text-light: #8F8F8F;       /* Light Gray */
+
+    /* Backgrounds */
+    --bg-primary: #FFFFFF;       /* Pure White */
+    --bg-secondary: #FAF9F6;     /* Cream White */
+    --bg-tertiary: #F5F5F0;      /* Light Cream */
+    --bg-accent: #2C1810;        /* Dark Brown */
+
+    /* Shadows - Professional Depth */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.15);
+
+    /* Border Radius - Modern & Clean */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+
+    /* Transitions - Smooth & Professional */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spacing System */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
 }
 
 * {
@@ -31,9 +72,10 @@ html {
 body {
     font-family: 'Inter', -apple-system, system-ui, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background: linear-gradient(180deg, #fefcf9 0%, var(--accent-cream) 100%);
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream-light) 100%);
     -webkit-font-smoothing: antialiased;
+    font-weight: 400;
 }
 
 .container {
@@ -1446,126 +1488,4 @@ body {
     }
 }
 
-/* Modal Mejorado */
-.modal-image-container {
-    flex: 1;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, rgba(201, 125, 76, 0.2) 100%);
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 350px;
-}
 
-.modal-image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.modal-info {
-    flex: 1;
-    padding: 0 30px;
-}
-
-.modal-info h2 {
-    font-family: 'Lora', serif;
-    font-size: 32px;
-    color: var(--text-dark);
-    margin-bottom: 12px;
-}
-
-.modal-rating {
-    font-size: 16px;
-    color: var(--primary);
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.modal-description {
-    font-size: 16px;
-    color: var(--text-warm);
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.modal-details {
-    background: rgba(244, 212, 168, 0.15);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-}
-
-.detail-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(201, 125, 76, 0.1);
-}
-
-.detail-item:last-child {
-    border-bottom: none;
-}
-
-.detail-label {
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.detail-value {
-    color: var(--primary);
-    font-weight: 700;
-}
-
-.modal-actions {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-add-cart,
-.btn-order {
-    flex: 1;
-    padding: 14px 24px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    transition: all 0.3s ease;
-}
-
-.btn-add-cart {
-    background: linear-gradient(135deg, var(--accent-gold), var(--primary-light));
-    color: var(--text-dark);
-    border: 2px solid var(--primary);
-}
-
-.btn-add-cart:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(201, 125, 76, 0.25);
-}
-
-.btn-order {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-}
-
-.btn-order:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(201, 125, 76, 0.35);
-}
-
-@media (max-width: 768px) {
-    .modal-body {
-        grid-template-columns: 1fr;
-    }
-
-    .modal-info {
-        padding: 0;
-    }
-
-    .modal-actions {
-        flex-direction: column;
-    }
-}
