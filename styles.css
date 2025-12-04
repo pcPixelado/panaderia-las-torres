@@ -479,14 +479,9 @@ body {
     transition: transform 0.4s ease;
 }
 
-.producto-card:hover .producto-img img {
-    transform: scale(1.08);
-}
-
 .producto-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(42, 24, 16, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -494,9 +489,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.producto-card:hover .producto-overlay {
-    opacity: 1;
-}
+
 
 .overlay-btn {
     padding: 12px 28px;
@@ -1360,29 +1353,6 @@ body {
 /* =========================
    HOVER EFFECTS & ANIMATIONS
    ========================= */
-.producto-card:hover .producto-img::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(198,142,23,0.3) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: dough-rise 2s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes dough-rise {
-    0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
-}
-
-.producto-card:hover .producto-img img {
-    animation: bake-glow 3s ease-in-out infinite;
-}
-
 @keyframes bake-glow {
     0%, 100% { filter: brightness(1) contrast(1); }
     50% { filter: brightness(1.1) contrast(1.05); }
